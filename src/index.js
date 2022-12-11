@@ -186,8 +186,6 @@ function renderGridHeader(hasScrollY) {
         headerRowDiv.appendChild(headerCellDiv);
     });
 
-
-
     return headerRowDiv;
 }
 
@@ -247,10 +245,10 @@ function renderGridRows(data) {
 export function run(datalength = 50) {
     
     const header = document.querySelector('#gridViewHeader');
+    const gridViewbody = document.querySelector('#gridViewbody');
 
     
     const data = createData(datalength);
-    const gridViewbody = document.querySelector('#gridViewbody');
     gridViewbody.appendChild(renderGridRows(data));
 
     setTimeout(() => {
@@ -259,11 +257,21 @@ export function run(datalength = 50) {
         if (gridViewbody.scrollHeight > gridViewbody.clientHeight) {
             colElements.style.width =  `${getColumnsWidthTotal() + scrollYWidth}px`;
         }
-    })
+    });
 
     gridViewbody.addEventListener('scroll', (e) => {
         // console.log(e);
         header.scrollLeft = gridViewbody.scrollLeft;
-    })
+    });
+}
+
+export function start() {
+    const header = document.querySelector('#gridViewHeader');
+    const gridViewbody = document.querySelector('#gridViewbody');
+    gridViewbody.addEventListener('scroll', (e) => {
+        // console.log(e);
+        header.scrollLeft = gridViewbody.scrollLeft;
+    });
 
 }
+

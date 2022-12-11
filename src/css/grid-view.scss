@@ -1,21 +1,19 @@
 
 .grid-view {
-    @apply flex flex-col h-full text-sm;
+    @apply flex flex-col h-full text-sm relative;
+
+    .grid-view_menu-btn {
+        @apply absolute h-9 bg-zinc-100 right-0 z-10;
+    }
+
 
     &.grid-view_border {
         @apply border border-gray-300;
 
         .grid-view_header {
-            .grid-view_header-row {
-                @apply border-b border-gray-300;
-            }    
             .grid-view_header-cell {
                 @apply border-r border-gray-300;
-
-                
             }
-            
-            
         }
 
         .grid-view_body {
@@ -40,22 +38,16 @@
         @apply justify-center
     }
 
-
-
     .grid-view-fixed-col, .grid-view-fixed-col-right {
         @apply sticky;
-    }
-
-    :is(.grid-view-fixed-col-right):first-child {
-        border-left:1px solid red;
     }
    
 
     .grid-view_header {
-        @apply overflow-hidden min-h-[36px] bg-zinc-100 flex-none;
+        @apply overflow-hidden min-h-[36px] bg-zinc-100 flex-none relative;
 
         .grid-view_header-row {
-            @apply flex flex-row h-9
+            @apply flex flex-row h-9 border-b border-gray-300;
         }
 
         .grid-view_header-cell {
