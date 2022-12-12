@@ -116,5 +116,21 @@
             }
         }
     }
+
+    .grid-view_footer {
+        @apply overflow-hidden;
+        .grid-view-row {
+            @apply h-8 flex flex-row border-b border-transparent;
+            .grid-view-cell {
+                @apply h-full flex flex-row  items-center px-1 bg-white border-r border-transparent;
+            }
+
+            &:hover {
+                .grid-view-cell {
+                    @apply bg-blue-100 cursor-default;
+                }
+            }
+        }
+    }
     
 }

@@ -745,6 +745,37 @@ video {
   background-color: rgb(219 234 254 / var(--tw-bg-opacity));
 }
 
+.grid-view .grid-view_footer{
+  overflow: hidden;
+}
+
+.grid-view .grid-view_footer .grid-view-row{
+  display: flex;
+  height: 2rem;
+  flex-direction: row;
+  border-bottom-width: 1px;
+  border-color: transparent;
+}
+
+.grid-view .grid-view_footer .grid-view-row .grid-view-cell{
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+  align-items: center;
+  border-right-width: 1px;
+  border-color: transparent;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.grid-view .grid-view_footer .grid-view-row:hover .grid-view-cell{
+  cursor: default;
+  --tw-bg-opacity: 1;
+  background-color: rgb(219 234 254 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-indigo-300:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(165 180 252 / var(--tw-bg-opacity));

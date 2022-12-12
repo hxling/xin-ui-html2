@@ -139,6 +139,7 @@ export function run(datalength = 50) {
     
     const header = document.querySelector('#gridViewHeader');
     const gridViewbody = document.querySelector('#gridViewbody');
+    const gridViewFooter = document.querySelector('#gridViewFooter');
     const cols = getColumns();
     
     const data = DataHelper.createData(datalength);
@@ -157,15 +158,19 @@ export function run(datalength = 50) {
     gridViewbody.addEventListener('scroll', (e) => {
         // console.log(e);
         header.scrollLeft = gridViewbody.scrollLeft;
+        gridViewFooter.scrollLeft = gridViewbody.scrollLeft;
     });
 }
 
 export function start() {
     const header = document.querySelector('#gridViewHeader');
     const gridViewbody = document.querySelector('#gridViewbody');
+    const gridViewFooter = document.querySelector('#gridViewFooter');
+    
     gridViewbody.addEventListener('scroll', (e) => {
         // console.log(e);
         header.scrollLeft = gridViewbody.scrollLeft;
+        gridViewFooter.scrollLeft = gridViewbody.scrollLeft;
     });
 
 }
