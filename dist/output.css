@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /*
 ! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com
 */
@@ -419,7 +421,7 @@ video {
   display: none;
 }
 
-*, ::before, ::after {
+*, ::before, ::after{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -466,7 +468,7 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-::backdrop {
+::backdrop{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -513,93 +515,100 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.fixed {
+.fixed{
   position: fixed;
 }
 
-.flex {
+.flex{
   display: flex;
 }
 
-.grid {
+.grid{
   display: grid;
 }
 
-.h-full {
+.h-full{
   height: 100%;
 }
 
-.h-20 {
+.h-20{
   height: 5rem;
 }
 
-.h-10 {
+.h-10{
   height: 2.5rem;
 }
 
-.w-full {
+.w-full{
   width: 100%;
 }
 
-.w-16 {
+.w-16{
   width: 4rem;
 }
 
-.flex-none {
+.flex-none{
   flex: none;
 }
 
-.flex-1 {
+.flex-1{
   flex: 1 1 0%;
 }
 
-.flex-col {
+.flex-col{
   flex-direction: column;
 }
 
-.overflow-hidden {
+.overflow-hidden{
   overflow: hidden;
 }
 
-.bg-emerald-200 {
+.bg-emerald-200{
   --tw-bg-opacity: 1;
   background-color: rgb(167 243 208 / var(--tw-bg-opacity));
 }
 
-.bg-indigo-500 {
+.bg-indigo-500{
   --tw-bg-opacity: 1;
   background-color: rgb(99 102 241 / var(--tw-bg-opacity));
 }
 
-.bg-red-100 {
+.bg-red-100{
   --tw-bg-opacity: 1;
   background-color: rgb(254 226 226 / var(--tw-bg-opacity));
 }
 
-.bg-lime-100 {
+.bg-lime-100{
   --tw-bg-opacity: 1;
   background-color: rgb(236 252 203 / var(--tw-bg-opacity));
 }
 
-.bg-indigo-200 {
+.bg-indigo-200{
   --tw-bg-opacity: 1;
   background-color: rgb(199 210 254 / var(--tw-bg-opacity));
 }
 
-.p-3 {
+.p-3{
   padding: 0.75rem;
 }
 
-.grid-view {
+.filter{
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.grid-view{
   position: relative;
   display: flex;
   height: 100%;
   flex-direction: column;
+  border-width: 1px;
+  border-color: transparent;
   font-size: 0.875rem;
   line-height: 1.25rem;
+  /** 斑马条纹，隔行变色 */
 }
 
-.grid-view .grid-view_menu-btn {
+.grid-view .grid-view_menu-btn{
   position: absolute;
   right: 0px;
   z-index: 10;
@@ -608,31 +617,37 @@ video {
   background-color: rgb(244 244 245 / var(--tw-bg-opacity));
 }
 
-.grid-view.grid-view_border {
-  border-width: 1px;
+.grid-view.grid-view_border{
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
-.grid-view.grid-view_border .grid-view_header .grid-view_header-cell {
-  border-right-width: 1px;
+.grid-view.grid-view_column-border .grid-view_header .grid-view_header-cell{
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
-.grid-view.grid-view_border .grid-view_body .grid-view-row {
-  border-bottom-width: 1px;
+.grid-view.grid-view_column-border .grid-view_body .grid-view-row .grid-view-cell:not(:last-child){
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
-.grid-view.grid-view_border .grid-view_body .grid-view-row .grid-view-cell {
-  border-right-width: 1px;
+.grid-view.grid-view_row-border .grid-view_body .grid-view-row{
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
-.grid-view.grid-view_nowrap .grid-view-cell {
+.grid-view.grid-view_stripe .grid-view_body .grid-view-row:nth-child(even) .grid-view-cell{
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 245 244 / var(--tw-bg-opacity));
+}
+
+.grid-view.grid-view_stripe .grid-view_body .grid-view-row:nth-child(even):hover .grid-view-cell{
+  --tw-bg-opacity: 1;
+  background-color: rgb(219 234 254 / var(--tw-bg-opacity));
+}
+
+.grid-view.grid-view_nowrap .grid-view-cell{
   flex-wrap: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -640,74 +655,86 @@ video {
 }
 
 .grid-view .grid-view_header-checkbox, .grid-view .grid-view_row-checkbox,
-.grid-view .grid-view_row-linenumber, .grid-view .grid-view_row-linenumber {
+.grid-view .grid-view_row-linenumber, .grid-view .grid-view_row-linenumber{
   justify-content: center;
 }
 
-.grid-view .grid-view-fixed-col, .grid-view .grid-view-fixed-col-right {
+.grid-view .grid-view-fixed-col, .grid-view .grid-view-fixed-col-right{
   position: sticky;
 }
 
-.grid-view .grid-view_header {
+.grid-view .grid-view_header{
   position: relative;
   min-height: 36px;
   flex: none;
   overflow: hidden;
+  border-bottom-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
   background-color: rgb(244 244 245 / var(--tw-bg-opacity));
 }
 
-.grid-view .grid-view_header .grid-view_header-row {
+.grid-view .grid-view_header .grid-view_header-row{
+  position: relative;
   display: flex;
   height: 2.25rem;
   flex-direction: row;
-  border-bottom-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
-.grid-view .grid-view_header .grid-view_header-cell {
+.grid-view .grid-view_header .grid-view_header-cell{
   display: flex;
+  height: 2.25rem;
   flex-grow: 0;
   flex-direction: row;
   align-items: center;
+  border-right-width: 1px;
+  border-color: transparent;
   --tw-bg-opacity: 1;
   background-color: rgb(244 244 245 / var(--tw-bg-opacity));
   padding-left: 0.25rem;
   padding-right: 0.25rem;
 }
 
-.grid-view .grid-view_body {
+.grid-view .grid-view_header.grid-view_header-hierarchy .grid-view_header-cell{
+  position: absolute;
+}
+
+.grid-view .grid-view_body{
   flex: 1 1 0%;
   overflow: auto;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.grid-view .grid-view_body .grid-view-row {
+.grid-view .grid-view_body .grid-view-row{
   display: flex;
   height: 2rem;
   flex-direction: row;
+  border-bottom-width: 1px;
+  border-color: transparent;
 }
 
-.grid-view .grid-view_body .grid-view-row .grid-view-cell {
+.grid-view .grid-view_body .grid-view-row .grid-view-cell{
   display: flex;
   height: 100%;
   flex-direction: row;
   align-items: center;
+  border-right-width: 1px;
+  border-color: transparent;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   padding-left: 0.25rem;
   padding-right: 0.25rem;
 }
 
-.grid-view .grid-view_body .grid-view-row:hover .grid-view-cell {
+.grid-view .grid-view_body .grid-view-row:hover .grid-view-cell{
   cursor: default;
   --tw-bg-opacity: 1;
   background-color: rgb(219 234 254 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-indigo-300:hover {
+.hover\:bg-indigo-300:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(165 180 252 / var(--tw-bg-opacity));
 }

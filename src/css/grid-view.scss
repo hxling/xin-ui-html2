@@ -1,10 +1,6 @@
 
 .grid-view {
-<<<<<<< HEAD
-    @apply flex flex-col h-full text-sm relative;
-=======
     @apply flex flex-col h-full text-sm relative border border-transparent;
->>>>>>> master
 
     .grid-view_menu-btn {
         @apply absolute h-9 bg-zinc-100 right-0 z-10;
@@ -12,13 +8,6 @@
 
 
     &.grid-view_border {
-<<<<<<< HEAD
-        @apply border border-gray-300;
-
-        .grid-view_header {
-            .grid-view_header-cell {
-                @apply border-r border-gray-300;
-=======
         @apply border-gray-300;        
     }
 
@@ -26,28 +15,18 @@
         .grid-view_header {
             .grid-view_header-cell {
                 @apply border-gray-300;
->>>>>>> master
             }
         }
 
         .grid-view_body {
             .grid-view-row {
-<<<<<<< HEAD
-                @apply border-b border-gray-300;
-
-                .grid-view-cell {
-                    @apply border-r border-gray-300;
-=======
                 .grid-view-cell:not(:last-child) {
                     @apply border-gray-300;
->>>>>>> master
                 }
             }
         }
     }
 
-<<<<<<< HEAD
-=======
     &.grid-view_row-border {
         .grid-view_body {
             .grid-view-row {
@@ -73,7 +52,6 @@
     }
 
 
->>>>>>> master
     &.grid-view_nowrap {
         .grid-view-cell {
             @apply flex-nowrap whitespace-nowrap text-ellipsis overflow-hidden;
@@ -91,16 +69,6 @@
    
 
     .grid-view_header {
-<<<<<<< HEAD
-        @apply overflow-hidden min-h-[36px] bg-zinc-100 flex-none relative;
-
-        .grid-view_header-row {
-            @apply flex flex-row h-9 border-b border-gray-300;
-        }
-
-        .grid-view_header-cell {
-            @apply flex flex-row grow-0 items-center px-1 bg-zinc-100;
-=======
         @apply overflow-hidden min-h-[36px] bg-zinc-100 flex-none relative border-b border-gray-300;
 
         .grid-view_header-row {
@@ -115,7 +83,6 @@
             .grid-view_header-cell {
                 @apply absolute;
             }
->>>>>>> master
         }
     }
 
@@ -123,15 +90,9 @@
         @apply flex-1 overflow-auto bg-white;
 
         .grid-view-row {
-<<<<<<< HEAD
-            @apply h-8 flex flex-row;
-            .grid-view-cell {
-                @apply h-full flex flex-row  items-center px-1 bg-white;
-=======
             @apply h-8 flex flex-row border-b border-transparent;
             .grid-view-cell {
                 @apply h-full flex flex-row  items-center px-1 bg-white border-r border-transparent;
->>>>>>> master
             }
 
             &:hover {
