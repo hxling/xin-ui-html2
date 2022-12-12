@@ -622,6 +622,12 @@ video {
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
+.grid-view.grid-view_column-border .grid-view_header.grid-view_header-hierarchy .grid-view_header-cell{
+  border-bottom-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+}
+
 .grid-view.grid-view_column-border .grid-view_header .grid-view_header-cell{
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
@@ -698,6 +704,11 @@ video {
 
 .grid-view .grid-view_header.grid-view_header-hierarchy .grid-view_header-cell{
   position: absolute;
+}
+
+.grid-view .grid-view_header.grid-view_header-hierarchy .grid-view_header-cell.grid-view-fixed-col, .grid-view .grid-view_header.grid-view_header-hierarchy .grid-view_header-cell.grid-view-fixed-col-right{
+  position: sticky;
+  z-index: 20;
 }
 
 .grid-view .grid-view_body{

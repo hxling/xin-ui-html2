@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)http://127.0.0.1:5500/src/group-header.html -->
+<html lang="en" class="h-full">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../../dist/output.css">
+    <title>GridView Group Header</title>
+</head>
+
+<body class="flex flex-col h-full overflow-hidden">
+
+    <div class="flex-1 w-full h-full p-3 overflow-hidden bg-red-100">
+        <!-- gridview container-->
+        <div
+            class="grid-view grid-view_row-border grid-view_column-border grid-view_border grid-view_nowrap grid-view_stripe">
+            <!-- grid header-->
+            <div class="grid-view_header grid-view_header-hierarchy" id="gridViewHeader">
+
+                <div class="grid-view_header-row" style="height: 108px; width: 1057px;">
+                    <div class="grid-view_header-cell"
+                        style="width: 430px;top: 0px;left: 0px;text-align: center;justify-content: center;">基本信息</div>
+                    <div class="grid-view_header-cell" style="width: 270px; top: 0px; left: 430px; height: 108px;">地址
+                    </div>
+                    <div class="grid-view_header-cell"
+                        style="width: 340px;top: 0px;left: 700px;justify-content: center;">其他信息</div>
+                    <div class="grid-view_header-cell" style="width: 40px; top: 36px; left: 0px; height: 72px;">ID</div>
+                    <div class="grid-view_header-cell" style="width: 130px; top: 36px; left: 40px; height: 72px;">姓名
+                    </div>
+                    <div class="grid-view_header-cell" style="width: 70px; top: 36px; left: 170px; height: 72px;">性别
+                    </div>
+                    <div class="grid-view_header-cell" style="width: 120px; top: 36px; left: 240px; height: 72px;">出生日期
+                    </div>
+                    <div class="grid-view_header-cell" style="width: 70px; top: 36px; left: 360px; height: 72px;">婚否
+                    </div>
+                    <div class="grid-view_header-cell"
+                        style="width: 240px;top: 36px;left: 700px;justify-content: center;">薪资职级</div>
+                    <div class="grid-view_header-cell" style="width: 100px; top: 36px; left: 940px; height: 72px;">邮编
+                    </div>
+                    <div class="grid-view_header-cell" style="width: 140px; top: 72px; left: 700px;">年薪</div>
+                    <div class="grid-view_header-cell" style="width: 100px; top: 72px; left: 840px;">职位</div>
+                </div>
+            </div>
+            <!-- grid rows-->
+            <div class="grid-view_body" id="gridViewbody">
+
+
+
+                <div class="grid-view_convas">
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">1</div>
+                        <div class="grid-view-cell" style="width: 130px;">赵六</div>
+                        <div class="grid-view-cell" style="width: 70px;">女</div>
+                        <div class="grid-view-cell" style="width: 120px;">1995-05-30</div>
+                        <div class="grid-view-cell" style="width: 70px;">true</div>
+                        <div class="grid-view-cell" style="width: 270px;">陕西省 渭南市 潼关县</div>
+                        <div class="grid-view-cell" style="width: 140px;">108132</div>
+                        <div class="grid-view-cell" style="width: 100px;">999999999</div>
+                        <div class="grid-view-cell" style="width: 100px;">917547</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">2</div>
+                        <div class="grid-view-cell" style="width: 130px;">赵六</div>
+                        <div class="grid-view-cell" style="width: 70px;">男</div>
+                        <div class="grid-view-cell" style="width: 120px;">2005-11-21</div>
+                        <div class="grid-view-cell" style="width: 70px;">true</div>
+                        <div class="grid-view-cell" style="width: 270px;">湖北省 荆门市 其它区</div>
+                        <div class="grid-view-cell" style="width: 140px;">38268</div>
+                        <div class="grid-view-cell" style="width: 100px;">99999999</div>
+                        <div class="grid-view-cell" style="width: 100px;">468135</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">3</div>
+                        <div class="grid-view-cell" style="width: 130px;">张三</div>
+                        <div class="grid-view-cell" style="width: 70px;">男</div>
+                        <div class="grid-view-cell" style="width: 120px;">1990-03-16</div>
+                        <div class="grid-view-cell" style="width: 70px;">true</div>
+                        <div class="grid-view-cell" style="width: 270px;">河南省 濮阳市 华龙区</div>
+                        <div class="grid-view-cell" style="width: 140px;">58848</div>
+                        <div class="grid-view-cell" style="width: 100px;">99</div>
+                        <div class="grid-view-cell" style="width: 100px;">402570</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">4</div>
+                        <div class="grid-view-cell" style="width: 130px;">王五</div>
+                        <div class="grid-view-cell" style="width: 70px;">女</div>
+                        <div class="grid-view-cell" style="width: 120px;">2018-03-02</div>
+                        <div class="grid-view-cell" style="width: 70px;">false</div>
+                        <div class="grid-view-cell" style="width: 270px;">香港特别行政区 新界 大埔区</div>
+                        <div class="grid-view-cell" style="width: 140px;">67620</div>
+                        <div class="grid-view-cell" style="width: 100px;">999</div>
+                        <div class="grid-view-cell" style="width: 100px;">247250</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">5</div>
+                        <div class="grid-view-cell" style="width: 130px;">李四</div>
+                        <div class="grid-view-cell" style="width: 70px;">男</div>
+                        <div class="grid-view-cell" style="width: 120px;">2011-11-14</div>
+                        <div class="grid-view-cell" style="width: 70px;">true</div>
+                        <div class="grid-view-cell" style="width: 270px;">西藏自治区 拉萨市 堆龙德庆县</div>
+                        <div class="grid-view-cell" style="width: 140px;">85428</div>
+                        <div class="grid-view-cell" style="width: 100px;">999999</div>
+                        <div class="grid-view-cell" style="width: 100px;">663975</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">6</div>
+                        <div class="grid-view-cell" style="width: 130px;">赵六</div>
+                        <div class="grid-view-cell" style="width: 70px;">男</div>
+                        <div class="grid-view-cell" style="width: 120px;">2009-07-20</div>
+                        <div class="grid-view-cell" style="width: 70px;">true</div>
+                        <div class="grid-view-cell" style="width: 270px;">四川省 眉山市 青神县</div>
+                        <div class="grid-view-cell" style="width: 140px;">52356</div>
+                        <div class="grid-view-cell" style="width: 100px;">999</div>
+                        <div class="grid-view-cell" style="width: 100px;">412345</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">7</div>
+                        <div class="grid-view-cell" style="width: 130px;">赵六</div>
+                        <div class="grid-view-cell" style="width: 70px;">女</div>
+                        <div class="grid-view-cell" style="width: 120px;">1970-05-31</div>
+                        <div class="grid-view-cell" style="width: 70px;">true</div>
+                        <div class="grid-view-cell" style="width: 270px;">台湾 花莲县 光复乡</div>
+                        <div class="grid-view-cell" style="width: 140px;">115764</div>
+                        <div class="grid-view-cell" style="width: 100px;">99999</div>
+                        <div class="grid-view-cell" style="width: 100px;">367045</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">8</div>
+                        <div class="grid-view-cell" style="width: 130px;">李四</div>
+                        <div class="grid-view-cell" style="width: 70px;">男</div>
+                        <div class="grid-view-cell" style="width: 120px;">2005-07-28</div>
+                        <div class="grid-view-cell" style="width: 70px;">false</div>
+                        <div class="grid-view-cell" style="width: 270px;">陕西省 安康市 石泉县</div>
+                        <div class="grid-view-cell" style="width: 140px;">93288</div>
+                        <div class="grid-view-cell" style="width: 100px;">99999</div>
+                        <div class="grid-view-cell" style="width: 100px;">253245</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">9</div>
+                        <div class="grid-view-cell" style="width: 130px;">周七七</div>
+                        <div class="grid-view-cell" style="width: 70px;">男</div>
+                        <div class="grid-view-cell" style="width: 120px;">1995-12-19</div>
+                        <div class="grid-view-cell" style="width: 70px;">false</div>
+                        <div class="grid-view-cell" style="width: 270px;">山西省 朔州市 右玉县</div>
+                        <div class="grid-view-cell" style="width: 140px;">42192</div>
+                        <div class="grid-view-cell" style="width: 100px;">99999999</div>
+                        <div class="grid-view-cell" style="width: 100px;">448851</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">10</div>
+                        <div class="grid-view-cell" style="width: 130px;">周七七</div>
+                        <div class="grid-view-cell" style="width: 70px;">男</div>
+                        <div class="grid-view-cell" style="width: 120px;">2008-08-18</div>
+                        <div class="grid-view-cell" style="width: 70px;">false</div>
+                        <div class="grid-view-cell" style="width: 270px;">四川省 泸州市 龙马潭区</div>
+                        <div class="grid-view-cell" style="width: 140px;">89760</div>
+                        <div class="grid-view-cell" style="width: 100px;">99999999</div>
+                        <div class="grid-view-cell" style="width: 100px;">169296</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">11</div>
+                        <div class="grid-view-cell" style="width: 130px;">王五</div>
+                        <div class="grid-view-cell" style="width: 70px;">女</div>
+                        <div class="grid-view-cell" style="width: 120px;">1982-05-06</div>
+                        <div class="grid-view-cell" style="width: 70px;">false</div>
+                        <div class="grid-view-cell" style="width: 270px;">台湾 台东县 太麻里乡</div>
+                        <div class="grid-view-cell" style="width: 140px;">56064</div>
+                        <div class="grid-view-cell" style="width: 100px;">9999</div>
+                        <div class="grid-view-cell" style="width: 100px;">657344</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">12</div>
+                        <div class="grid-view-cell" style="width: 130px;">赵六</div>
+                        <div class="grid-view-cell" style="width: 70px;">男</div>
+                        <div class="grid-view-cell" style="width: 120px;">1989-01-23</div>
+                        <div class="grid-view-cell" style="width: 70px;">true</div>
+                        <div class="grid-view-cell" style="width: 270px;">江西省 九江市 修水县</div>
+                        <div class="grid-view-cell" style="width: 140px;">112452</div>
+                        <div class="grid-view-cell" style="width: 100px;">999999999</div>
+                        <div class="grid-view-cell" style="width: 100px;">771563</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">13</div>
+                        <div class="grid-view-cell" style="width: 130px;">李四</div>
+                        <div class="grid-view-cell" style="width: 70px;">男</div>
+                        <div class="grid-view-cell" style="width: 120px;">1987-02-17</div>
+                        <div class="grid-view-cell" style="width: 70px;">false</div>
+                        <div class="grid-view-cell" style="width: 270px;">台湾 金门县 金湖镇</div>
+                        <div class="grid-view-cell" style="width: 140px;">13968</div>
+                        <div class="grid-view-cell" style="width: 100px;">999999</div>
+                        <div class="grid-view-cell" style="width: 100px;">357627</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">14</div>
+                        <div class="grid-view-cell" style="width: 130px;">王五</div>
+                        <div class="grid-view-cell" style="width: 70px;">女</div>
+                        <div class="grid-view-cell" style="width: 120px;">2012-08-02</div>
+                        <div class="grid-view-cell" style="width: 70px;">false</div>
+                        <div class="grid-view-cell" style="width: 270px;">陕西省 榆林市 其它区</div>
+                        <div class="grid-view-cell" style="width: 140px;">119964</div>
+                        <div class="grid-view-cell" style="width: 100px;">9999999</div>
+                        <div class="grid-view-cell" style="width: 100px;">773931</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">15</div>
+                        <div class="grid-view-cell" style="width: 130px;">李四</div>
+                        <div class="grid-view-cell" style="width: 70px;">男</div>
+                        <div class="grid-view-cell" style="width: 120px;">1974-06-06</div>
+                        <div class="grid-view-cell" style="width: 70px;">false</div>
+                        <div class="grid-view-cell" style="width: 270px;">湖南省 怀化市 新晃侗族自治县</div>
+                        <div class="grid-view-cell" style="width: 140px;">81000</div>
+                        <div class="grid-view-cell" style="width: 100px;">9999999</div>
+                        <div class="grid-view-cell" style="width: 100px;">883566</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">16</div>
+                        <div class="grid-view-cell" style="width: 130px;">王五</div>
+                        <div class="grid-view-cell" style="width: 70px;">女</div>
+                        <div class="grid-view-cell" style="width: 120px;">1989-02-04</div>
+                        <div class="grid-view-cell" style="width: 70px;">true</div>
+                        <div class="grid-view-cell" style="width: 270px;">新疆维吾尔自治区 乌鲁木齐市 其它区</div>
+                        <div class="grid-view-cell" style="width: 140px;">76476</div>
+                        <div class="grid-view-cell" style="width: 100px;">99999</div>
+                        <div class="grid-view-cell" style="width: 100px;">128871</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">17</div>
+                        <div class="grid-view-cell" style="width: 130px;">赵六</div>
+                        <div class="grid-view-cell" style="width: 70px;">男</div>
+                        <div class="grid-view-cell" style="width: 120px;">1985-06-22</div>
+                        <div class="grid-view-cell" style="width: 70px;">true</div>
+                        <div class="grid-view-cell" style="width: 270px;">澳门特别行政区 澳门半岛 -</div>
+                        <div class="grid-view-cell" style="width: 140px;">36900</div>
+                        <div class="grid-view-cell" style="width: 100px;">99999</div>
+                        <div class="grid-view-cell" style="width: 100px;">756369</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">18</div>
+                        <div class="grid-view-cell" style="width: 130px;">王五</div>
+                        <div class="grid-view-cell" style="width: 70px;">女</div>
+                        <div class="grid-view-cell" style="width: 120px;">1970-02-23</div>
+                        <div class="grid-view-cell" style="width: 70px;">false</div>
+                        <div class="grid-view-cell" style="width: 270px;">福建省 南平市 延平区</div>
+                        <div class="grid-view-cell" style="width: 140px;">5112</div>
+                        <div class="grid-view-cell" style="width: 100px;">99</div>
+                        <div class="grid-view-cell" style="width: 100px;">356208</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">19</div>
+                        <div class="grid-view-cell" style="width: 130px;">王五</div>
+                        <div class="grid-view-cell" style="width: 70px;">女</div>
+                        <div class="grid-view-cell" style="width: 120px;">1970-06-29</div>
+                        <div class="grid-view-cell" style="width: 70px;">true</div>
+                        <div class="grid-view-cell" style="width: 270px;">黑龙江省 七台河市 新兴区</div>
+                        <div class="grid-view-cell" style="width: 140px;">89112</div>
+                        <div class="grid-view-cell" style="width: 100px;">99</div>
+                        <div class="grid-view-cell" style="width: 100px;">622332</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">20</div>
+                        <div class="grid-view-cell" style="width: 130px;">李四</div>
+                        <div class="grid-view-cell" style="width: 70px;">男</div>
+                        <div class="grid-view-cell" style="width: 120px;">1998-12-22</div>
+                        <div class="grid-view-cell" style="width: 70px;">true</div>
+                        <div class="grid-view-cell" style="width: 270px;">海南省 三亚市 -</div>
+                        <div class="grid-view-cell" style="width: 140px;">43008</div>
+                        <div class="grid-view-cell" style="width: 100px;">999999</div>
+                        <div class="grid-view-cell" style="width: 100px;">834644</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">21</div>
+                        <div class="grid-view-cell" style="width: 130px;">李四</div>
+                        <div class="grid-view-cell" style="width: 70px;">女</div>
+                        <div class="grid-view-cell" style="width: 120px;">1998-02-13</div>
+                        <div class="grid-view-cell" style="width: 70px;">true</div>
+                        <div class="grid-view-cell" style="width: 270px;">山西省 晋中市 介休市</div>
+                        <div class="grid-view-cell" style="width: 140px;">50052</div>
+                        <div class="grid-view-cell" style="width: 100px;">999</div>
+                        <div class="grid-view-cell" style="width: 100px;">649303</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">22</div>
+                        <div class="grid-view-cell" style="width: 130px;">王五</div>
+                        <div class="grid-view-cell" style="width: 70px;">女</div>
+                        <div class="grid-view-cell" style="width: 120px;">1995-12-25</div>
+                        <div class="grid-view-cell" style="width: 70px;">true</div>
+                        <div class="grid-view-cell" style="width: 270px;">福建省 厦门市 集美区</div>
+                        <div class="grid-view-cell" style="width: 140px;">52524</div>
+                        <div class="grid-view-cell" style="width: 100px;">99999</div>
+                        <div class="grid-view-cell" style="width: 100px;">382837</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">23</div>
+                        <div class="grid-view-cell" style="width: 130px;">王五</div>
+                        <div class="grid-view-cell" style="width: 70px;">男</div>
+                        <div class="grid-view-cell" style="width: 120px;">1983-10-21</div>
+                        <div class="grid-view-cell" style="width: 70px;">true</div>
+                        <div class="grid-view-cell" style="width: 270px;">江苏省 南通市 通州区</div>
+                        <div class="grid-view-cell" style="width: 140px;">22116</div>
+                        <div class="grid-view-cell" style="width: 100px;">999</div>
+                        <div class="grid-view-cell" style="width: 100px;">423657</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">24</div>
+                        <div class="grid-view-cell" style="width: 130px;">李四</div>
+                        <div class="grid-view-cell" style="width: 70px;">男</div>
+                        <div class="grid-view-cell" style="width: 120px;">1985-09-22</div>
+                        <div class="grid-view-cell" style="width: 70px;">true</div>
+                        <div class="grid-view-cell" style="width: 270px;">云南省 迪庆藏族自治州 德钦县</div>
+                        <div class="grid-view-cell" style="width: 140px;">52536</div>
+                        <div class="grid-view-cell" style="width: 100px;">9999</div>
+                        <div class="grid-view-cell" style="width: 100px;">926736</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">25</div>
+                        <div class="grid-view-cell" style="width: 130px;">王五</div>
+                        <div class="grid-view-cell" style="width: 70px;">女</div>
+                        <div class="grid-view-cell" style="width: 120px;">1975-11-23</div>
+                        <div class="grid-view-cell" style="width: 70px;">false</div>
+                        <div class="grid-view-cell" style="width: 270px;">湖北省 荆门市 沙洋县</div>
+                        <div class="grid-view-cell" style="width: 140px;">73704</div>
+                        <div class="grid-view-cell" style="width: 100px;">99999999</div>
+                        <div class="grid-view-cell" style="width: 100px;">402926</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">26</div>
+                        <div class="grid-view-cell" style="width: 130px;">赵六</div>
+                        <div class="grid-view-cell" style="width: 70px;">男</div>
+                        <div class="grid-view-cell" style="width: 120px;">2021-05-20</div>
+                        <div class="grid-view-cell" style="width: 70px;">true</div>
+                        <div class="grid-view-cell" style="width: 270px;">上海 上海市 青浦区</div>
+                        <div class="grid-view-cell" style="width: 140px;">93852</div>
+                        <div class="grid-view-cell" style="width: 100px;">999999999</div>
+                        <div class="grid-view-cell" style="width: 100px;">744806</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">27</div>
+                        <div class="grid-view-cell" style="width: 130px;">赵六</div>
+                        <div class="grid-view-cell" style="width: 70px;">男</div>
+                        <div class="grid-view-cell" style="width: 120px;">1973-05-27</div>
+                        <div class="grid-view-cell" style="width: 70px;">false</div>
+                        <div class="grid-view-cell" style="width: 270px;">黑龙江省 黑河市 五大连池市</div>
+                        <div class="grid-view-cell" style="width: 140px;">90120</div>
+                        <div class="grid-view-cell" style="width: 100px;">999999</div>
+                        <div class="grid-view-cell" style="width: 100px;">536139</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">28</div>
+                        <div class="grid-view-cell" style="width: 130px;">王五</div>
+                        <div class="grid-view-cell" style="width: 70px;">女</div>
+                        <div class="grid-view-cell" style="width: 120px;">1977-12-16</div>
+                        <div class="grid-view-cell" style="width: 70px;">false</div>
+                        <div class="grid-view-cell" style="width: 270px;">青海省 海北藏族自治州 海晏县</div>
+                        <div class="grid-view-cell" style="width: 140px;">588</div>
+                        <div class="grid-view-cell" style="width: 100px;">99999999</div>
+                        <div class="grid-view-cell" style="width: 100px;">937842</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">29</div>
+                        <div class="grid-view-cell" style="width: 130px;">张三</div>
+                        <div class="grid-view-cell" style="width: 70px;">男</div>
+                        <div class="grid-view-cell" style="width: 120px;">2012-07-08</div>
+                        <div class="grid-view-cell" style="width: 70px;">true</div>
+                        <div class="grid-view-cell" style="width: 270px;">贵州省 毕节市 织金县</div>
+                        <div class="grid-view-cell" style="width: 140px;">11004</div>
+                        <div class="grid-view-cell" style="width: 100px;">9999</div>
+                        <div class="grid-view-cell" style="width: 100px;">615085</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">30</div>
+                        <div class="grid-view-cell" style="width: 130px;">王五</div>
+                        <div class="grid-view-cell" style="width: 70px;">女</div>
+                        <div class="grid-view-cell" style="width: 120px;">1986-10-04</div>
+                        <div class="grid-view-cell" style="width: 70px;">false</div>
+                        <div class="grid-view-cell" style="width: 270px;">香港特别行政区 九龙 观塘区</div>
+                        <div class="grid-view-cell" style="width: 140px;">57396</div>
+                        <div class="grid-view-cell" style="width: 100px;">999999</div>
+                        <div class="grid-view-cell" style="width: 100px;">150826</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">31</div>
+                        <div class="grid-view-cell" style="width: 130px;">王五</div>
+                        <div class="grid-view-cell" style="width: 70px;">女</div>
+                        <div class="grid-view-cell" style="width: 120px;">1986-10-29</div>
+                        <div class="grid-view-cell" style="width: 70px;">false</div>
+                        <div class="grid-view-cell" style="width: 270px;">陕西省 渭南市 合阳县</div>
+                        <div class="grid-view-cell" style="width: 140px;">60744</div>
+                        <div class="grid-view-cell" style="width: 100px;">9</div>
+                        <div class="grid-view-cell" style="width: 100px;">572327</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">32</div>
+                        <div class="grid-view-cell" style="width: 130px;">张三</div>
+                        <div class="grid-view-cell" style="width: 70px;">女</div>
+                        <div class="grid-view-cell" style="width: 120px;">1983-11-11</div>
+                        <div class="grid-view-cell" style="width: 70px;">false</div>
+                        <div class="grid-view-cell" style="width: 270px;">西藏自治区 林芝地区 米林县</div>
+                        <div class="grid-view-cell" style="width: 140px;">94944</div>
+                        <div class="grid-view-cell" style="width: 100px;">9999999</div>
+                        <div class="grid-view-cell" style="width: 100px;">885551</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">33</div>
+                        <div class="grid-view-cell" style="width: 130px;">王五</div>
+                        <div class="grid-view-cell" style="width: 70px;">男</div>
+                        <div class="grid-view-cell" style="width: 120px;">1981-12-21</div>
+                        <div class="grid-view-cell" style="width: 70px;">true</div>
+                        <div class="grid-view-cell" style="width: 270px;">贵州省 铜仁市 石阡县</div>
+                        <div class="grid-view-cell" style="width: 140px;">43884</div>
+                        <div class="grid-view-cell" style="width: 100px;">99999</div>
+                        <div class="grid-view-cell" style="width: 100px;">555824</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">34</div>
+                        <div class="grid-view-cell" style="width: 130px;">周七七</div>
+                        <div class="grid-view-cell" style="width: 70px;">女</div>
+                        <div class="grid-view-cell" style="width: 120px;">2022-12-07</div>
+                        <div class="grid-view-cell" style="width: 70px;">false</div>
+                        <div class="grid-view-cell" style="width: 270px;">浙江省 杭州市 余杭区</div>
+                        <div class="grid-view-cell" style="width: 140px;">71136</div>
+                        <div class="grid-view-cell" style="width: 100px;">9</div>
+                        <div class="grid-view-cell" style="width: 100px;">182028</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">35</div>
+                        <div class="grid-view-cell" style="width: 130px;">周七七</div>
+                        <div class="grid-view-cell" style="width: 70px;">女</div>
+                        <div class="grid-view-cell" style="width: 120px;">1977-03-02</div>
+                        <div class="grid-view-cell" style="width: 70px;">true</div>
+                        <div class="grid-view-cell" style="width: 270px;">安徽省 亳州市 利辛县</div>
+                        <div class="grid-view-cell" style="width: 140px;">51912</div>
+                        <div class="grid-view-cell" style="width: 100px;">999</div>
+                        <div class="grid-view-cell" style="width: 100px;">706253</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">36</div>
+                        <div class="grid-view-cell" style="width: 130px;">李四</div>
+                        <div class="grid-view-cell" style="width: 70px;">男</div>
+                        <div class="grid-view-cell" style="width: 120px;">1984-12-13</div>
+                        <div class="grid-view-cell" style="width: 70px;">false</div>
+                        <div class="grid-view-cell" style="width: 270px;">辽宁省 大连市 庄河市</div>
+                        <div class="grid-view-cell" style="width: 140px;">30600</div>
+                        <div class="grid-view-cell" style="width: 100px;">9</div>
+                        <div class="grid-view-cell" style="width: 100px;">420958</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">37</div>
+                        <div class="grid-view-cell" style="width: 130px;">王五</div>
+                        <div class="grid-view-cell" style="width: 70px;">女</div>
+                        <div class="grid-view-cell" style="width: 120px;">2009-09-15</div>
+                        <div class="grid-view-cell" style="width: 70px;">true</div>
+                        <div class="grid-view-cell" style="width: 270px;">宁夏回族自治区 固原市 隆德县</div>
+                        <div class="grid-view-cell" style="width: 140px;">32496</div>
+                        <div class="grid-view-cell" style="width: 100px;">9999</div>
+                        <div class="grid-view-cell" style="width: 100px;">851262</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">38</div>
+                        <div class="grid-view-cell" style="width: 130px;">张三</div>
+                        <div class="grid-view-cell" style="width: 70px;">男</div>
+                        <div class="grid-view-cell" style="width: 120px;">1988-07-01</div>
+                        <div class="grid-view-cell" style="width: 70px;">false</div>
+                        <div class="grid-view-cell" style="width: 270px;">海南省 三亚市 -</div>
+                        <div class="grid-view-cell" style="width: 140px;">60096</div>
+                        <div class="grid-view-cell" style="width: 100px;">999999999</div>
+                        <div class="grid-view-cell" style="width: 100px;">208919</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">39</div>
+                        <div class="grid-view-cell" style="width: 130px;">张三</div>
+                        <div class="grid-view-cell" style="width: 70px;">女</div>
+                        <div class="grid-view-cell" style="width: 120px;">1998-05-02</div>
+                        <div class="grid-view-cell" style="width: 70px;">false</div>
+                        <div class="grid-view-cell" style="width: 270px;">吉林省 白城市 洮南市</div>
+                        <div class="grid-view-cell" style="width: 140px;">2256</div>
+                        <div class="grid-view-cell" style="width: 100px;">99999</div>
+                        <div class="grid-view-cell" style="width: 100px;">368573</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">40</div>
+                        <div class="grid-view-cell" style="width: 130px;">张三</div>
+                        <div class="grid-view-cell" style="width: 70px;">女</div>
+                        <div class="grid-view-cell" style="width: 120px;">1975-09-11</div>
+                        <div class="grid-view-cell" style="width: 70px;">false</div>
+                        <div class="grid-view-cell" style="width: 270px;">宁夏回族自治区 吴忠市 同心县</div>
+                        <div class="grid-view-cell" style="width: 140px;">22716</div>
+                        <div class="grid-view-cell" style="width: 100px;">9</div>
+                        <div class="grid-view-cell" style="width: 100px;">860097</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">41</div>
+                        <div class="grid-view-cell" style="width: 130px;">李四</div>
+                        <div class="grid-view-cell" style="width: 70px;">女</div>
+                        <div class="grid-view-cell" style="width: 120px;">2020-11-26</div>
+                        <div class="grid-view-cell" style="width: 70px;">true</div>
+                        <div class="grid-view-cell" style="width: 270px;">江西省 鹰潭市 贵溪市</div>
+                        <div class="grid-view-cell" style="width: 140px;">111768</div>
+                        <div class="grid-view-cell" style="width: 100px;">999999</div>
+                        <div class="grid-view-cell" style="width: 100px;">115245</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">42</div>
+                        <div class="grid-view-cell" style="width: 130px;">张三</div>
+                        <div class="grid-view-cell" style="width: 70px;">女</div>
+                        <div class="grid-view-cell" style="width: 120px;">1970-01-14</div>
+                        <div class="grid-view-cell" style="width: 70px;">false</div>
+                        <div class="grid-view-cell" style="width: 270px;">吉林省 白山市 临江市</div>
+                        <div class="grid-view-cell" style="width: 140px;">3456</div>
+                        <div class="grid-view-cell" style="width: 100px;">9999</div>
+                        <div class="grid-view-cell" style="width: 100px;">704525</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">43</div>
+                        <div class="grid-view-cell" style="width: 130px;">周七七</div>
+                        <div class="grid-view-cell" style="width: 70px;">女</div>
+                        <div class="grid-view-cell" style="width: 120px;">1984-09-23</div>
+                        <div class="grid-view-cell" style="width: 70px;">true</div>
+                        <div class="grid-view-cell" style="width: 270px;">海外 海外 -</div>
+                        <div class="grid-view-cell" style="width: 140px;">86928</div>
+                        <div class="grid-view-cell" style="width: 100px;">999999</div>
+                        <div class="grid-view-cell" style="width: 100px;">856414</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">44</div>
+                        <div class="grid-view-cell" style="width: 130px;">赵六</div>
+                        <div class="grid-view-cell" style="width: 70px;">男</div>
+                        <div class="grid-view-cell" style="width: 120px;">2022-12-10</div>
+                        <div class="grid-view-cell" style="width: 70px;">false</div>
+                        <div class="grid-view-cell" style="width: 270px;">黑龙江省 双鸭山市 四方台区</div>
+                        <div class="grid-view-cell" style="width: 140px;">102276</div>
+                        <div class="grid-view-cell" style="width: 100px;">9999999</div>
+                        <div class="grid-view-cell" style="width: 100px;">614817</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">45</div>
+                        <div class="grid-view-cell" style="width: 130px;">赵六</div>
+                        <div class="grid-view-cell" style="width: 70px;">女</div>
+                        <div class="grid-view-cell" style="width: 120px;">1981-05-05</div>
+                        <div class="grid-view-cell" style="width: 70px;">true</div>
+                        <div class="grid-view-cell" style="width: 270px;">湖南省 株洲市 炎陵县</div>
+                        <div class="grid-view-cell" style="width: 140px;">14832</div>
+                        <div class="grid-view-cell" style="width: 100px;">99999</div>
+                        <div class="grid-view-cell" style="width: 100px;">043785</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">46</div>
+                        <div class="grid-view-cell" style="width: 130px;">王五</div>
+                        <div class="grid-view-cell" style="width: 70px;">女</div>
+                        <div class="grid-view-cell" style="width: 120px;">1990-01-19</div>
+                        <div class="grid-view-cell" style="width: 70px;">false</div>
+                        <div class="grid-view-cell" style="width: 270px;">内蒙古自治区 兴安盟 科尔沁右翼前旗</div>
+                        <div class="grid-view-cell" style="width: 140px;">112836</div>
+                        <div class="grid-view-cell" style="width: 100px;">9</div>
+                        <div class="grid-view-cell" style="width: 100px;">451868</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">47</div>
+                        <div class="grid-view-cell" style="width: 130px;">王五</div>
+                        <div class="grid-view-cell" style="width: 70px;">女</div>
+                        <div class="grid-view-cell" style="width: 120px;">1999-07-03</div>
+                        <div class="grid-view-cell" style="width: 70px;">false</div>
+                        <div class="grid-view-cell" style="width: 270px;">广西壮族自治区 来宾市 兴宾区</div>
+                        <div class="grid-view-cell" style="width: 140px;">61644</div>
+                        <div class="grid-view-cell" style="width: 100px;">999</div>
+                        <div class="grid-view-cell" style="width: 100px;">782538</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">48</div>
+                        <div class="grid-view-cell" style="width: 130px;">李四</div>
+                        <div class="grid-view-cell" style="width: 70px;">男</div>
+                        <div class="grid-view-cell" style="width: 120px;">1998-02-08</div>
+                        <div class="grid-view-cell" style="width: 70px;">true</div>
+                        <div class="grid-view-cell" style="width: 270px;">陕西省 延安市 富县</div>
+                        <div class="grid-view-cell" style="width: 140px;">102156</div>
+                        <div class="grid-view-cell" style="width: 100px;">9999999</div>
+                        <div class="grid-view-cell" style="width: 100px;">309484</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">49</div>
+                        <div class="grid-view-cell" style="width: 130px;">周七七</div>
+                        <div class="grid-view-cell" style="width: 70px;">男</div>
+                        <div class="grid-view-cell" style="width: 120px;">2008-04-23</div>
+                        <div class="grid-view-cell" style="width: 70px;">false</div>
+                        <div class="grid-view-cell" style="width: 270px;">福建省 莆田市 荔城区</div>
+                        <div class="grid-view-cell" style="width: 140px;">83784</div>
+                        <div class="grid-view-cell" style="width: 100px;">99999</div>
+                        <div class="grid-view-cell" style="width: 100px;">166323</div>
+                    </div>
+                    <div class="grid-view-row" style="width: 1040px;">
+                        <div class="grid-view-cell" style="width: 40px;">50</div>
+                        <div class="grid-view-cell" style="width: 130px;">王五</div>
+                        <div class="grid-view-cell" style="width: 70px;">女</div>
+                        <div class="grid-view-cell" style="width: 120px;">1988-01-02</div>
+                        <div class="grid-view-cell" style="width: 70px;">true</div>
+                        <div class="grid-view-cell" style="width: 270px;">湖南省 怀化市 辰溪县</div>
+                        <div class="grid-view-cell" style="width: 140px;">23676</div>
+                        <div class="grid-view-cell" style="width: 100px;">999999</div>
+                        <div class="grid-view-cell" style="width: 100px;">762799</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    <script type="text/javascript" src="../node_modules/mockjs/dist/mock.js"></script>
+    <script type="module">
+        import * as app from '../index.js';
+
+        app.start();
+
+
+    </script>
+
+</body>
+
+</html>

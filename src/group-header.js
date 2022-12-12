@@ -25,14 +25,44 @@ const columns = [
 ];
 
 
-function createGroupHeader() {
+function createGroupHeader(fixed) {
+
+    const gvConvas =  document.querySelector('.grid-view_header-row');
+    if (gvConvas) {
+        gvConvas.remove();
+    }
 
     const headerRowDiv = document.createElement('div');
     headerRowDiv.classList.add('grid-view_header-row'); 
 
     const headerHeight = columns.length * 36;
-
     headerRowDiv.style.height = `${headerHeight}px`;
+
+    const chkboxDiv = document.createElement('div');
+    if (fixed){
+        chkboxDiv.classList.add('grid-view_header-cell','grid-view_header-checkbox', 'grid-view-fixed-col');
+    } else {
+        chkboxDiv.classList.add('grid-view_header-cell','grid-view_header-checkbox');
+    }
+    chkboxDiv.style.width = `40px`;
+    chkboxDiv.style.left = `0px`;
+    chkboxDiv.style.height = `${headerHeight}px`;
+    chkboxDiv.innerHTML = '<input type="checkbox" />';
+    headerRowDiv.appendChild(chkboxDiv);
+
+
+    const lineNumDiv = document.createElement('div');
+    if (fixed) {
+        lineNumDiv.classList.add(...['grid-view_header-cell','grid-view_header-linenumber', 'grid-view-fixed-col']);
+    } else {
+        lineNumDiv.classList.add(...['grid-view_header-cell','grid-view_header-linenumber']);
+    }
+    lineNumDiv.style.width = `40px`;
+    lineNumDiv.style.left = `40px`;
+    lineNumDiv.style.height = `${headerHeight}px`;
+    lineNumDiv.innerText = '序号';
+    headerRowDiv.appendChild(lineNumDiv);
+
 
     columns.forEach(cols => {
         cols.forEach(col => {
@@ -41,7 +71,7 @@ function createGroupHeader() {
             headerCellDiv.style.width = `${col.width || 100}px`;
             headerCellDiv.innerText = col.title;
             headerCellDiv.style.top = `${col.top}px`;
-            headerCellDiv.style.left = `${col.left}px`;
+            headerCellDiv.style.left = `${col.left + 80}px`;
             headerCellDiv.style.height = `${col.height}px`;
             
 
@@ -61,10 +91,12 @@ export function run(datalength = 50) {
     const dataColumns = calculationGroupColumnWidth();
     
     const data = DataHelper.createData(datalength);
-    gridViewbody.appendChild(DataHelper.renderGridRows(data, dataColumns));
+    gridViewbody.appendChild(DataHelper.renderGridRows(data, dataColumns, {
+        showCheckbox: true, showRowNumber: true, fixed: true
+    }));
 
     setTimeout(() => {
-        const colElements = createGroupHeader(gridViewbody.scrollHeight > gridViewbody.clientHeight);
+        const colElements = createGroupHeader(true);
         header.appendChild(colElements);
         if (gridViewbody.scrollHeight > gridViewbody.clientHeight) {
             colElements.style.width =  `${DataHelper.getColumnsWidthTotal(dataColumns) + DataHelper.scrollYWidth}px`;

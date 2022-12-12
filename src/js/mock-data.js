@@ -48,11 +48,32 @@ export function createData(len) {
     return arr;
 }
 
-export function getColumnsWidthTotal(cols) {
-    const totalWidth = cols.reduce((r, c) => {
+const defaultOpts = {
+    showCheckbox: true,
+    showRowNumber: true,
+    fixed: true
+};
+
+export function getColumnsWidthTotal(cols, opts) {
+    
+    
+    opts = opts || {};
+
+    opts = Object.assign(defaultOpts, opts);
+
+    let totalWidth = cols.reduce((r, c) => {
         r+= c.width || 100;
         return r;
-    }, 0) + 80;
+    }, 0); //+ 80;
+
+    if (opts.showCheckbox) {
+        totalWidth += 40;
+    }
+
+    if (opts.showRowNumber) {
+        totalWidth += 40;
+    }
+
     return totalWidth;
 }
 
@@ -65,6 +86,7 @@ export function renderGridRows(data, cols, opts) {
         gvConvas.remove();
     }
 
+    opts = Object.assign(defaultOpts, opts || {});
 
     const rowsDiv = document.createElement('div');
     rowsDiv.classList.add('grid-view_convas');
@@ -79,7 +101,10 @@ export function renderGridRows(data, cols, opts) {
 
         if (opts && opts.showCheckbox) {
             const chkboxDiv = document.createElement('div');
-            chkboxDiv.classList.add('grid-view-cell','grid-view_row-checkbox', 'grid-view-fixed-col');
+            chkboxDiv.classList.add('grid-view-cell','grid-view_row-checkbox');
+            if (opts.fixed) {
+                chkboxDiv.classList.add('grid-view-fixed-col');
+            }
             chkboxDiv.style.width = `40px`;
             chkboxDiv.style.left = `0px`;
             chkboxDiv.innerHTML = '<input type="checkbox" />';
@@ -88,7 +113,10 @@ export function renderGridRows(data, cols, opts) {
 
         if (opts && opts.showRowNumber) {
             const lineNumDiv = document.createElement('div');
-            lineNumDiv.classList.add('grid-view-cell', 'grid-view_row-linenumber', 'grid-view-fixed-col');
+            lineNumDiv.classList.add('grid-view-cell', 'grid-view_row-linenumber');
+            if (opts.fixed) {
+                lineNumDiv.classList.add('grid-view-fixed-col');
+            }
             lineNumDiv.style.width = `40px`;
             lineNumDiv.style.left = `40px`;
             lineNumDiv.innerText = `${ i + 1}`;

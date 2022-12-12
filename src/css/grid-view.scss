@@ -13,6 +13,12 @@
 
     &.grid-view_column-border {
         .grid-view_header {
+
+            &.grid-view_header-hierarchy {
+                .grid-view_header-cell {
+                    @apply border-b border-gray-300;
+                }
+            }
             .grid-view_header-cell {
                 @apply border-gray-300;
             }
@@ -25,6 +31,8 @@
                 }
             }
         }
+
+        
     }
 
     &.grid-view_row-border {
@@ -82,7 +90,13 @@
         &.grid-view_header-hierarchy {
             .grid-view_header-cell {
                 @apply absolute;
+
+                &.grid-view-fixed-col, &.grid-view-fixed-col-right {
+                    @apply sticky z-20;
+                }
             }
+
+
         }
     }
 
