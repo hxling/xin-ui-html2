@@ -638,6 +638,11 @@ video {
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
+.grid-view.grid-view_column-border .grid-view_footer .grid-view-row .grid-view-cell{
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+}
+
 .grid-view.grid-view_row-border .grid-view_body .grid-view-row{
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));

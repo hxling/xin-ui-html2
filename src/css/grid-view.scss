@@ -32,6 +32,13 @@
             }
         }
 
+        .grid-view_footer {
+            .grid-view-row {
+                .grid-view-cell {
+                    @apply border-gray-300;
+                }
+            }
+        }
         
     }
 

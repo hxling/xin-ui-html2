@@ -18,6 +18,9 @@
 .grid-view.grid-view_column-border .grid-view_body .grid-view-row .grid-view-cell:not(:last-child) {
   @apply border-gray-300;
 }
+.grid-view.grid-view_column-border .grid-view_footer .grid-view-row .grid-view-cell {
+  @apply border-gray-300;
+}
 .grid-view.grid-view_row-border .grid-view_body .grid-view-row {
   @apply border-gray-300;
 }
