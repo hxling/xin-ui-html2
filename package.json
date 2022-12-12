@@ -1,0 +1,20 @@
+{
+  "name": "xin-ui_tailwindcss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tailwindcss -i ./src/css/index.css -o ./dist/output.css",
+    "build-w": "npx tailwindcss -i ./src/css/index.css -o ./dist/output.css --watch",
+    "sass": "sass  --watch  ./src/css/grid-view.scss ./src/css/grid-view.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
+  },
+  "dependencies": {
+    "mockjs": "^1.1.0",
+    "sass": "^1.56.2"
+  }
+}

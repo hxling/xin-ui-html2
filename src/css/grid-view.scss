@@ -1,0 +1,106 @@
+
+.grid-view {
+    @apply flex flex-col h-full text-sm relative border border-transparent;
+
+    .grid-view_menu-btn {
+        @apply absolute h-9 bg-zinc-100 right-0 z-10;
+    }
+
+
+    &.grid-view_border {
+        @apply border-gray-300;        
+    }
+
+    &.grid-view_column-border {
+        .grid-view_header {
+            .grid-view_header-cell {
+                @apply border-gray-300;
+            }
+        }
+
+        .grid-view_body {
+            .grid-view-row {
+                .grid-view-cell:not(:last-child) {
+                    @apply border-gray-300;
+                }
+            }
+        }
+    }
+
+    &.grid-view_row-border {
+        .grid-view_body {
+            .grid-view-row {
+                @apply border-gray-300;
+            }
+        }
+    }
+    /** 斑马条纹，隔行变色 */
+    &.grid-view_stripe {
+        .grid-view_body {
+            .grid-view-row:nth-child(even) {
+                .grid-view-cell {
+                    @apply bg-stone-100;
+                }
+
+                &:hover {
+                    .grid-view-cell {
+                        @apply bg-blue-100;
+                    }
+                }
+            }
+        }
+    }
+
+
+    &.grid-view_nowrap {
+        .grid-view-cell {
+            @apply flex-nowrap whitespace-nowrap text-ellipsis overflow-hidden;
+        }
+    }
+
+    .grid-view_header-checkbox, .grid-view_row-checkbox,
+    .grid-view_row-linenumber, .grid-view_row-linenumber {
+        @apply justify-center
+    }
+
+    .grid-view-fixed-col, .grid-view-fixed-col-right {
+        @apply sticky;
+    }
+   
+
+    .grid-view_header {
+        @apply overflow-hidden min-h-[36px] bg-zinc-100 flex-none relative border-b border-gray-300;
+
+        .grid-view_header-row {
+            @apply flex flex-row h-9 relative;
+        }
+
+        .grid-view_header-cell {
+            @apply flex flex-row grow-0 items-center px-1 bg-zinc-100 border-r border-transparent h-9;
+        }
+
+        &.grid-view_header-hierarchy {
+            .grid-view_header-cell {
+                @apply absolute;
+            }
+        }
+    }
+
+    .grid-view_body {
+        @apply flex-1 overflow-auto bg-white;
+
+        .grid-view-row {
+            @apply h-8 flex flex-row border-b border-transparent;
+            .grid-view-cell {
+                @apply h-full flex flex-row  items-center px-1 bg-white border-r border-transparent;
+            }
+
+            &:hover {
+                .grid-view-cell {
+                    @apply bg-blue-100 cursor-default;
+                }
+            }
+        }
+    }
+    
+}
