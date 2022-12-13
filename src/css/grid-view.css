@@ -47,7 +47,7 @@
   @apply flex flex-row h-9 relative;
 }
 .grid-view .grid-view_header .grid-view_header-cell {
-  @apply flex flex-row grow-0 items-center px-1 bg-zinc-100 border-r border-transparent h-9;
+  @apply flex flex-row grow-0 items-center px-1 bg-zinc-100 border-r border-transparent h-9 shrink-0;
 }
 .grid-view .grid-view_header.grid-view_header-hierarchy .grid-view_header-cell {
   @apply absolute;
@@ -62,7 +62,7 @@
   @apply h-8 flex flex-row border-b border-transparent;
 }
 .grid-view .grid-view_body .grid-view-row .grid-view-cell {
-  @apply h-full flex flex-row  items-center px-1 bg-white border-r border-transparent;
+  @apply h-full flex flex-row  items-center px-1 bg-white border-r border-transparent shrink-0;
 }
 .grid-view .grid-view_body .grid-view-row:hover .grid-view-cell {
   @apply bg-blue-100 cursor-default;
@@ -74,7 +74,7 @@
   @apply h-8 flex flex-row border-b border-transparent;
 }
 .grid-view .grid-view_footer .grid-view-row .grid-view-cell {
-  @apply h-full flex flex-row  items-center px-1 bg-white border-r border-transparent;
+  @apply h-full flex flex-row  items-center px-1 bg-white border-r border-transparent shrink-0;
 }
 .grid-view .grid-view_footer .grid-view-row:hover .grid-view-cell {
   @apply bg-blue-100 cursor-default;

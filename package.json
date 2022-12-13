@@ -6,14 +6,16 @@
   "scripts": {
     "build": "npx tailwindcss -i ./src/css/index.css -o ./dist/output.css",
     "build-w": "npx tailwindcss -i ./src/css/index.css -o ./dist/output.css --watch",
-    "sass": "sass  --watch  ./src/css/grid-view.scss ./src/css/grid-view.css"
+    "sass": "sass  --watch  ./src/scss/grid-view.scss ./src/css/grid-view.css"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@tailwindcss/forms": "^0.5.3",
     "tailwindcss": "^3.2.4"
   },
   "dependencies": {
+    "bootstrap-icons": "^1.10.2",
     "mockjs": "^1.1.0",
     "sass": "^1.56.2"
   }

@@ -152,6 +152,7 @@ export function run(datalength = 50) {
         header.appendChild(colElements);
         if (gridViewbody.scrollHeight > gridViewbody.clientHeight) {
             colElements.style.width =  `${DataHelper.getColumnsWidthTotal(cols) + DataHelper.scrollYWidth}px`;
+            
         }
     });
 
