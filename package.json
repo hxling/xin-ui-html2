@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npx tailwindcss -i ./src/css/index.css -o ./dist/output.css",
     "build-w": "npx tailwindcss -i ./src/css/index.css -o ./dist/output.css --watch",
-    "sass": "sass  --watch  ./src/scss/grid-view.scss ./src/css/grid-view.css"
+    "sass": "sass  --watch  ./src/scss/index.scss ./src/css/index.css"
   },
   "author": "",
   "license": "ISC",

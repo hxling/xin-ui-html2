@@ -1,5 +1,5 @@
 
-import * as DataHelper from './js/mock-data.js';
+import * as DataHelper from '../js/mock-data.js';
 // creates a global "addWheelListener" method
 // example: addWheelListener( elem, function( e ) { console.log( e.deltaY ); e.preventDefault(); } );
 (function(window,document) {

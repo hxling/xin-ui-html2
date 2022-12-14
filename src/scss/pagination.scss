@@ -1,0 +1,65 @@
+.xin-pagination {
+    @apply h-10 bg-white;
+
+    .pagination-container {
+        @apply flex h-full justify-end items-center;
+
+        .pagination-contents {
+            @apply list-none flex flex-row items-center cursor-pointer flex-nowrap;
+            li {
+                @apply h-7 leading-7 whitespace-nowrap;
+
+                &.pagination-goto, &.pagination-total {
+                    @apply cursor-default;
+                }
+
+                &.pagination-list {
+                    >select {
+                        @apply focus:outline-none;
+                    }
+                }
+            }
+        }
+    }
+
+    .pagination-action {
+        @apply border border-gray-200 h-8 shrink-0 px-1 leading-8 rounded-md text-center hover:bg-gray-200 active:bg-gray-300;
+    }
+
+    .pagination-number {
+        @apply min-w-[28px]
+    }
+
+    .pagination-first, .pagination-prev, .pagination-next, .pagination-last, .pagination-dots {
+        @apply max-w-[28px] min-w-[28px]
+    }
+
+    .pagination-goto_input {
+        @apply focus:outline-none focus:border-blue-400 p-0 w-10 border-b border-gray-300 h-7 text-center;
+
+        &::-webkit-inner-spin-button {
+            display: none;
+        }
+    }
+
+    .pagination-current {
+        @apply bg-blue-100 text-blue-600 border-blue-200;
+    }
+
+    .pagination-disabled {
+        @apply bg-gray-50 text-gray-300
+    }
+
+    /** 对齐 */
+    &.left {
+        .pagination-container {
+            @apply justify-start;
+        }
+    }
+
+    &.simple-mode {
+        .pagination-action {
+            @apply border-0;
+        }
+    }
+}

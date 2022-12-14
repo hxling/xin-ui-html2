@@ -1,5 +1,5 @@
-import * as utils from './helper.js';
-import * as DataHelper from './js/mock-data.js';
+import * as utils from '../js/helper.js';
+import * as DataHelper from '../js/mock-data.js';
 
 const columns = [
     [

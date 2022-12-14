@@ -1,2 +1,136 @@
-@import url(base.css);
-@import url(grid-view.css);
+@charset "UTF-8";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.grid-view {
+  @apply flex flex-col h-full text-sm relative border border-transparent bg-white text-[13px];
+  /** 斑马条纹，隔行变色 */
+}
+.grid-view .grid-view_menu-btn {
+  @apply absolute h-9 bg-zinc-100 right-0 z-10;
+}
+.grid-view.grid-view_border {
+  @apply border-gray-300;
+}
+.grid-view.grid-view_column-border .grid-view_header.grid-view_header-hierarchy .grid-view_header-cell {
+  @apply border-b border-gray-300;
+}
+.grid-view.grid-view_column-border .grid-view_header .grid-view_header-cell {
+  @apply border-gray-300;
+}
+.grid-view.grid-view_column-border .grid-view_body .grid-view-row .grid-view-cell:not(:last-child) {
+  @apply border-gray-300;
+}
+.grid-view.grid-view_column-border .grid-view_footer .grid-view-row .grid-view-cell {
+  @apply border-gray-300;
+}
+.grid-view.grid-view_row-border .grid-view_body .grid-view-row {
+  @apply border-gray-300;
+}
+.grid-view.grid-view_stripe .grid-view_body .grid-view-row:nth-child(even) .grid-view-cell {
+  @apply bg-stone-100;
+}
+.grid-view.grid-view_stripe .grid-view_body .grid-view-row:nth-child(even):hover .grid-view-cell {
+  @apply bg-blue-100;
+}
+.grid-view.grid-view_nowrap .grid-view-cell {
+  @apply flex-nowrap whitespace-nowrap text-ellipsis overflow-hidden;
+}
+.grid-view .grid-view_header-checkbox, .grid-view .grid-view_row-checkbox,
+.grid-view .grid-view_row-linenumber, .grid-view .grid-view_row-linenumber {
+  @apply justify-center;
+}
+.grid-view .grid-view-fixed-col, .grid-view .grid-view-fixed-col-right {
+  @apply sticky;
+}
+.grid-view .grid-view_header {
+  @apply overflow-hidden min-h-[36px] bg-zinc-100 flex-none relative border-b border-gray-300;
+}
+.grid-view .grid-view_header .grid-view_header-row {
+  @apply flex flex-row h-9 relative;
+}
+.grid-view .grid-view_header .grid-view_header-cell {
+  @apply flex flex-row grow-0 items-center px-1 bg-zinc-100 border-r border-transparent h-9 shrink-0;
+}
+.grid-view .grid-view_header.grid-view_header-hierarchy .grid-view_header-cell {
+  @apply absolute;
+}
+.grid-view .grid-view_header.grid-view_header-hierarchy .grid-view_header-cell.grid-view-fixed-col, .grid-view .grid-view_header.grid-view_header-hierarchy .grid-view_header-cell.grid-view-fixed-col-right {
+  @apply sticky z-20;
+}
+.grid-view .grid-view_body {
+  @apply flex-1 overflow-auto bg-white;
+}
+.grid-view .grid-view_body .grid-view-row {
+  @apply h-8 flex flex-row border-b border-transparent;
+}
+.grid-view .grid-view_body .grid-view-row .grid-view-cell {
+  @apply h-full flex flex-row  items-center px-1 bg-white border-r border-transparent shrink-0;
+}
+.grid-view .grid-view_body .grid-view-row:hover .grid-view-cell {
+  @apply bg-blue-100 cursor-default;
+}
+.grid-view .grid-view_footer {
+  @apply overflow-hidden;
+}
+.grid-view .grid-view_footer .grid-view-row {
+  @apply h-8 flex flex-row border-b border-transparent;
+}
+.grid-view .grid-view_footer .grid-view-row .grid-view-cell {
+  @apply h-full flex flex-row  items-center px-1 bg-white border-r border-transparent shrink-0;
+}
+.grid-view .grid-view_footer .grid-view-row:hover .grid-view-cell {
+  @apply bg-blue-100 cursor-default;
+}
+.grid-view .grid-view_pager {
+  @apply h-14 items-center flex bg-white border-t border-gray-200 overflow-hidden;
+}
+
+.xin-pagination {
+  @apply h-10 bg-white;
+  /** 对齐 */
+}
+.xin-pagination .pagination-container {
+  @apply flex h-full justify-end items-center;
+}
+.xin-pagination .pagination-container .pagination-contents {
+  @apply list-none flex flex-row items-center cursor-pointer flex-nowrap;
+}
+.xin-pagination .pagination-container .pagination-contents li {
+  @apply h-7 leading-7 whitespace-nowrap;
+}
+.xin-pagination .pagination-container .pagination-contents li.pagination-goto, .xin-pagination .pagination-container .pagination-contents li.pagination-total {
+  @apply cursor-default;
+}
+.xin-pagination .pagination-container .pagination-contents li.pagination-list > select {
+  @apply focus:outline-none;
+}
+.xin-pagination .pagination-action {
+  @apply border border-gray-200 h-8 shrink-0 px-1 leading-8 rounded-md text-center hover:bg-gray-200 active:bg-gray-300;
+}
+.xin-pagination .pagination-number {
+  @apply min-w-[28px];
+}
+.xin-pagination .pagination-first, .xin-pagination .pagination-prev, .xin-pagination .pagination-next, .xin-pagination .pagination-last, .xin-pagination .pagination-dots {
+  @apply max-w-[28px] min-w-[28px];
+}
+.xin-pagination .pagination-goto_input {
+  @apply focus:outline-none focus:border-blue-400 p-0 w-10 border-b border-gray-300 h-7 text-center;
+}
+.xin-pagination .pagination-goto_input::-webkit-inner-spin-button {
+  display: none;
+}
+.xin-pagination .pagination-current {
+  @apply bg-blue-100 text-blue-600 border-blue-200;
+}
+.xin-pagination .pagination-disabled {
+  @apply bg-gray-50 text-gray-300;
+}
+.xin-pagination.left .pagination-container {
+  @apply justify-start;
+}
+.xin-pagination.simple-mode .pagination-action {
+  @apply border-0;
+}
+
+/*# sourceMappingURL=index.css.map */
