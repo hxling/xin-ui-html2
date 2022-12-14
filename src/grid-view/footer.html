@@ -10,10 +10,7 @@
     <title>Document</title>
 </head>
 <body class="flex flex-col h-full overflow-hidden">
-    <div class="flex-none w-full h-20 bg-emerald-200">
-        <input type="number" min="10" value="50" id="totalItems"> 
-        <button class="w-16 bg-indigo-500 hover:bg-indigo-300" id="btnLoad">加载</button>
-    </div>
+
     <div class="flex-1 w-full h-full p-3 overflow-hidden bg-red-100">
         <!-- gridview container-->
         <div class="grid-view grid-view_row-border grid-view_column-border grid-view_border grid-view_nowrap">
@@ -33,63 +30,32 @@
                 </div> -->
             </div>
 
-            <div class="grid-view_filterrow" id="gridViewFilterRow">
-                <div class="grid-view-cell grid-view_row-checkbox grid-view-fixed-col" style="width: 40px; left: 0px;"></div>
-                <div class="grid-view-cell grid-view_row-linenumber grid-view-fixed-col" style="width: 40px; left: 40px;"></div>
-                <div class="grid-view-cell" style="width: 100px">
-                    <div class="p-1 flex-1">
-                        <input type="text" class="w-full h-6 p-1 border border-gray-400 rounded focus:border-blue-400 outline-none">
+            <!-- grid footer-->
+            <div class="grid-view_footer total-row_top" id="gridViewFooter">
+                <div>
+                    <div class="grid-view-row" style="width: 1817px">
+                        <div class="grid-view-cell grid-view_row-checkbox grid-view-fixed-col" style="width: 40px; left: 0px;"></div>
+                        <div class="grid-view-cell grid-view_row-linenumber grid-view-fixed-col" style="width: 40px; left: 40px;"></div>
+                        <div class="grid-view-cell" style="width: 100px">合计：</div>
+                        <div class="grid-view-cell" style="width: 140px">共 10 条</div>
+                        <div class="grid-view-cell" style="width: 70px"></div>
+                        <div class="grid-view-cell" style="width: 160px"></div>
+                        <div class="grid-view-cell" style="width: 300px">
+                            贵州省 六盘水市 钟山区
+                        </div>
+                        <div class="grid-view-cell" style="width: 400px">
+                            所往位单体划近百例但打心新问好科。年飞没市质得具置油使争向手。相约查五养做工派运第例元角。器则义路出通出教列展重百发往月近。己便相认带很即程南查叫团群海产治。白权利斗治示军志直本八展但。没斗示目火为建及规位以象实热。分酸证名了世须说真反江很委府。济影性强美热和得才合平值我或。
+                        </div>
+                        <div class="grid-view-cell" style="width: 140px">14220</div>
+                        <div class="grid-view-cell" style="width: 70px">true</div>
+                        <div class="grid-view-cell grid-view-fixed-col-right" style="width: 100px;right:257px">9999999</div>
+                        <div class="grid-view-cell grid-view-fixed-col-right" style="width: 100px;right:157px">331517</div>
+                        <div class="grid-view-cell grid-view-fixed-col-right" style="width: 140px;right: 17px">
+                            avatar-h.png
+                        </div>
+                        <div class="grid-view-cell grid-view-fixed-col-right" style="width: 17px;right:0px"></div>
                     </div>
                 </div>
-                <div class="grid-view-cell" style="width: 140px">
-                    <div class="p-1 flex-1">
-                        <input type="text" class="w-full h-6 p-1 border border-gray-400 rounded focus:border-blue-400 outline-none">
-                    </div>
-                </div>
-                <div class="grid-view-cell" style="width: 70px">
-                    <div class="p-1 flex-1">
-                        <input type="text" class="w-full h-6 p-1 border border-gray-400 rounded focus:border-blue-400 outline-none">
-                    </div>
-                </div>
-                <div class="grid-view-cell" style="width: 160px">
-                    <div class="p-1 flex-1">
-                        <input type="text" class="w-full h-6 p-1 border border-gray-400 rounded focus:border-blue-400 outline-none">
-                    </div></div>
-                <div class="grid-view-cell" style="width: 300px">
-                    <div class="p-1 flex-1">
-                        <input type="text" class="w-full h-6 p-1 border border-gray-400 rounded focus:border-blue-400 outline-none">
-                    </div>
-                </div>
-                <div class="grid-view-cell" style="width: 400px">
-                    <div class="p-1 flex-1">
-                        <input type="text" class="w-full h-6 p-1 border border-gray-400 rounded focus:border-blue-400 outline-none">
-                    </div>
-                </div>
-                <div class="grid-view-cell" style="width: 140px">
-                    <div class="p-1 flex-1">
-                        <input type="text" class="w-full h-6 p-1 border border-gray-400 rounded focus:border-blue-400 outline-none">
-                    </div>
-                </div>
-                <div class="grid-view-cell" style="width: 70px">
-                    <div class="p-1 flex-1">
-                        <input type="text" class="w-full h-6 p-1 border border-gray-400 rounded focus:border-blue-400 outline-none">
-                    </div></div>
-                <div class="grid-view-cell grid-view-fixed-col-right" style="width: 100px;right:257px">
-                    <div class="p-1 flex-1">
-                        <input type="text" class="w-full h-6 p-1 border border-gray-400 rounded focus:border-blue-400 outline-none">
-                    </div>
-                </div>
-                <div class="grid-view-cell grid-view-fixed-col-right" style="width: 100px;right:157px">
-                    <div class="p-1 flex-1">
-                        <input type="text" class="w-full h-6 p-1 border border-gray-400 rounded focus:border-blue-400 outline-none">
-                    </div>
-                </div>
-                <div class="grid-view-cell grid-view-fixed-col-right" style="width: 140px;right: 17px">
-                    <div class="p-1 flex-1">
-                        <input type="text" class="w-full h-6 p-1 border border-gray-400 rounded focus:border-blue-400 outline-none">
-                    </div>
-                </div>
-                <div class="grid-view-cell grid-view-fixed-col-right" style="width: 17px;right:0px"></div>
             </div>
 
             <!-- grid rows-->
@@ -119,7 +85,7 @@
                             贵州省 六盘水市 钟山区
                         </div>
                         <div class="grid-view-cell" style="width: 400px">
-                            
+                            所往位单体划近百例但打心新问好科。年飞没市质得具置油使争向手。相约查五养做工派运第例元角。器则义路出通出教列展重百发往月近。己便相认带很即程南查叫团群海产治。白权利斗治示军志直本八展但。没斗示目火为建及规位以象实热。分酸证名了世须说真反江很委府。济影性强美热和得才合平值我或。
                         </div>
                         <div class="grid-view-cell" style="width: 140px">14220</div>
                         <div class="grid-view-cell" style="width: 70px">true</div>
@@ -184,12 +150,12 @@
         import * as app from './index.js';
 
         import * as GroupColumns from './group-header.js';
-        app.run(10);
+        app.run(50);
 
 
         function reload() {
             const value = document.querySelector('#totalItems').value;
-            app.run(value || 10);
+            app.run(value || 50);
         }
 
         document.querySelector('#btnLoad').addEventListener('click', () => {

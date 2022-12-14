@@ -5,6 +5,7 @@
 .grid-view {
   @apply flex flex-col h-full text-sm relative border border-transparent bg-white text-[13px];
   /** 斑马条纹，隔行变色 */
+  /** 过滤行 */
 }
 .grid-view .grid-view_menu-btn {
   @apply absolute h-9 bg-zinc-100 right-0 z-10;
@@ -16,6 +17,9 @@
   @apply border-b border-gray-300;
 }
 .grid-view.grid-view_column-border .grid-view_header .grid-view_header-cell {
+  @apply border-gray-300;
+}
+.grid-view.grid-view_column-border .grid-view_filterrow .grid-view-cell:not(:last-child) {
   @apply border-gray-300;
 }
 .grid-view.grid-view_column-border .grid-view_body .grid-view-row .grid-view-cell:not(:last-child) {
@@ -58,6 +62,12 @@
 .grid-view .grid-view_header.grid-view_header-hierarchy .grid-view_header-cell.grid-view-fixed-col, .grid-view .grid-view_header.grid-view_header-hierarchy .grid-view_header-cell.grid-view-fixed-col-right {
   @apply sticky z-20;
 }
+.grid-view .grid-view_filterrow {
+  @apply h-10 border-b border-gray-400 flex flex-row items-center  overflow-hidden;
+}
+.grid-view .grid-view_filterrow .grid-view-cell {
+  @apply h-full flex flex-row  items-center px-1 bg-stone-50 border-r border-transparent shrink-0;
+}
 .grid-view .grid-view_body {
   @apply flex-1 overflow-auto bg-white;
 }
@@ -71,16 +81,19 @@
   @apply bg-blue-100 cursor-default;
 }
 .grid-view .grid-view_footer {
-  @apply overflow-hidden;
+  @apply overflow-hidden  border-zinc-400 bg-stone-50;
 }
 .grid-view .grid-view_footer .grid-view-row {
   @apply h-8 flex flex-row border-b border-transparent;
 }
 .grid-view .grid-view_footer .grid-view-row .grid-view-cell {
-  @apply h-full flex flex-row  items-center px-1 bg-white border-r border-transparent shrink-0;
+  @apply h-full flex flex-row  items-center px-1 bg-stone-50 border-r border-transparent shrink-0;
 }
-.grid-view .grid-view_footer .grid-view-row:hover .grid-view-cell {
-  @apply bg-blue-100 cursor-default;
+.grid-view .grid-view_footer.total-row_top {
+  @apply border-b;
+}
+.grid-view .grid-view_footer.total-row_bottom {
+  @apply border-t;
 }
 .grid-view .grid-view_pager {
   @apply h-14 items-center flex bg-white border-t border-gray-200 overflow-hidden;
