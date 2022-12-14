@@ -162,14 +162,26 @@ export function start() {
     const header = document.querySelector('#gridViewHeader');
     const gridViewbody = document.querySelector('#gridViewbody');
     const gridViewFooter = document.querySelector('#gridViewFooter');
+    const gridViewFooter2 = document.querySelector('#gridViewFooter2');
     const gridViewFilterRow = document.querySelector('#gridViewFilterRow');
     
     
     gridViewbody.addEventListener('scroll', (e) => {
         // console.log(e);
         header.scrollLeft = gridViewbody.scrollLeft;
-        gridViewFooter.scrollLeft = gridViewbody.scrollLeft;
-        gridViewFilterRow.scrollLeft = gridViewbody.scrollLeft;
+
+        if (gridViewFooter) {
+            gridViewFooter.scrollLeft = gridViewbody.scrollLeft;
+        }
+        
+
+        if(gridViewFooter2) {
+            gridViewFooter2.scrollLeft = gridViewbody.scrollLeft;
+        }
+
+        if(gridViewFilterRow) {
+            gridViewFilterRow.scrollLeft = gridViewbody.scrollLeft;
+        }
     });
 
 }

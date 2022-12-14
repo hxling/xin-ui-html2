@@ -1,3 +1,5 @@
+$border-color: border-gray-300;
+
 
 .grid-view {
     @apply flex flex-col h-full text-sm relative border border-transparent bg-white text-[13px];
@@ -8,31 +10,31 @@
 
 
     &.grid-view_border {
-        @apply border-gray-300;        
+        @apply #{$border-color};        
     }
 
     &.grid-view_column-border {
         .grid-view_header {
             &.grid-view_header-hierarchy {
                 .grid-view_header-cell {
-                    @apply border-b border-gray-300;
+                    @apply border-b  #{$border-color};
                 }
             }
             .grid-view_header-cell {
-                @apply border-gray-300;
+                @apply  #{$border-color};
             }
         }
 
         .grid-view_filterrow {
             .grid-view-cell:not(:last-child) {
-                @apply border-gray-300;
+                @apply #{$border-color};
             }
         }
 
         .grid-view_body {
             .grid-view-row {
                 .grid-view-cell:not(:last-child) {
-                    @apply border-gray-300;
+                    @apply #{$border-color};
                 }
             }
         }
@@ -40,7 +42,7 @@
         .grid-view_footer {
             .grid-view-row {
                 .grid-view-cell {
-                    @apply border-gray-300;
+                    @apply #{$border-color};
                 }
             }
         }
@@ -50,7 +52,7 @@
     &.grid-view_row-border {
         .grid-view_body {
             .grid-view-row {
-                @apply border-gray-300;
+                @apply #{$border-color};
             }
         }
     }
@@ -89,14 +91,14 @@
    
 
     .grid-view_header {
-        @apply overflow-hidden min-h-[36px] bg-zinc-100 flex-none relative border-b border-gray-300;
+        @apply overflow-hidden min-h-[40px] bg-zinc-100 flex-none relative border-b #{$border-color};
 
         .grid-view_header-row {
-            @apply flex flex-row h-9 relative;
+            @apply flex flex-row h-10 relative;
         }
 
         .grid-view_header-cell {
-            @apply flex flex-row grow-0 items-center px-1 bg-zinc-100 border-r border-transparent h-9 shrink-0;
+            @apply flex flex-row grow-0 items-center px-1 bg-zinc-100 border-r border-transparent h-full shrink-0;
         }
 
         &.grid-view_header-hierarchy {
@@ -107,8 +109,6 @@
                     @apply sticky z-20;
                 }
             }
-
-
         }
     }
 
@@ -134,13 +134,19 @@
                     @apply bg-blue-100 cursor-default;
                 }
             }
+
+            &.selected {
+                .grid-view-cell {
+                    @apply bg-red-200  #{!important};
+                }
+            }
         }
     }
 
     .grid-view_footer {
         @apply overflow-hidden  border-zinc-400 bg-stone-50;
         .grid-view-row {
-            @apply h-8 flex flex-row border-b border-transparent;
+            @apply h-10 flex flex-row border-b border-transparent;
             .grid-view-cell {
                 @apply h-full flex flex-row  items-center px-1 bg-stone-50 border-r border-transparent shrink-0;
             }
