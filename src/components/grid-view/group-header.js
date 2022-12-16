@@ -1,5 +1,5 @@
-import * as utils from '../js/helper.js';
-import * as DataHelper from '../js/mock-data.js';
+import * as utils from '../../js/helper.js';
+import * as DataHelper from '../../js/mock-data.js';
 
 const columns = [
     [
@@ -24,6 +24,7 @@ const columns = [
     ]
 ];
 
+const headerRowHeight = 40;
 
 function createGroupHeader(fixed) {
 
@@ -35,7 +36,7 @@ function createGroupHeader(fixed) {
     const headerRowDiv = document.createElement('div');
     headerRowDiv.classList.add('grid-view_header-row'); 
 
-    const headerHeight = columns.length * 36;
+    const headerHeight = columns.length * headerRowHeight;
     headerRowDiv.style.height = `${headerHeight}px`;
 
     const chkboxDiv = document.createElement('div');
@@ -78,6 +79,13 @@ function createGroupHeader(fixed) {
             headerRowDiv.appendChild(headerCellDiv);
         });
     });
+
+    const scrollArea = document.createElement('div');
+    scrollArea.classList.add('grid-view-cell','grid-view-fixed-col-right');
+    scrollArea.style.width = `17px`;
+    scrollArea.style.right = `0px`;
+    scrollArea.style.height = `${headerHeight}px`;
+    headerRowDiv.appendChild(scrollArea);
 
     return headerRowDiv;
 }
@@ -134,10 +142,10 @@ function calculationGroupColumnWidth() {
             }
 
             if (col.rowspan > 1) {
-                col.height = col.rowspan * 36;
+                col.height = col.rowspan * headerRowHeight;
             }
 
-            col.top = i * 36;
+            col.top = i * headerRowHeight;
         });
     });
 
@@ -157,10 +165,10 @@ function calculationGroupColumnWidth() {
             }
 
             if (col.rowspan > 1) {
-                col.height = col.rowspan * 36;
+                col.height = col.rowspan * headerRowHeight;
             }
 
-            col.top = i * 36;
+            col.top = i * headerRowHeight;
         });
     });
 

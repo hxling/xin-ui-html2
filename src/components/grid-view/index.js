@@ -1,5 +1,5 @@
 
-import * as DataHelper from '../js/mock-data.js';
+import * as DataHelper from '../../js/mock-data.js';
 // creates a global "addWheelListener" method
 // example: addWheelListener( elem, function( e ) { console.log( e.deltaY ); e.preventDefault(); } );
 (function(window,document) {
@@ -132,6 +132,12 @@ function renderGridHeader(hasScrollY) {
         headerRowDiv.appendChild(headerCellDiv);
     });
 
+    const scrollArea = document.createElement('div');
+    scrollArea.classList.add('grid-view_header-cell','grid-view-fixed-col-right');
+    scrollArea.style.width = `17px`;
+    scrollArea.style.right = `0px`;
+    scrollArea.style.height = `40px`;
+    headerRowDiv.appendChild(scrollArea);
     return headerRowDiv;
 }
 

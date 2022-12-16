@@ -22,7 +22,7 @@
         }
     }
 
-    .pagination-action {
+    .pagination-action:not(.pagination-disabled) {
         @apply border border-gray-200 h-8 shrink-0 px-1 leading-8 rounded-md text-center hover:bg-gray-200 active:bg-gray-300;
     }
 
@@ -47,7 +47,7 @@
     }
 
     .pagination-disabled {
-        @apply bg-gray-50 text-gray-300
+        @apply bg-gray-50 text-gray-300 text-center cursor-not-allowed
     }
 
     /** 对齐 */

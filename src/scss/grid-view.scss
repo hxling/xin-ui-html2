@@ -23,6 +23,10 @@ $border-color: border-gray-300;
             .grid-view_header-cell {
                 @apply  #{$border-color};
             }
+
+            .grid-view_header-cell:last-child {
+                border-right: 0;
+            }
         }
 
         .grid-view_filterrow {
@@ -34,28 +38,76 @@ $border-color: border-gray-300;
         .grid-view_body {
             .grid-view-row {
                 .grid-view-cell:not(:last-child) {
-                    @apply #{$border-color};
+                    @apply border-b-0 #{$border-color};
                 }
             }
         }
 
-        .grid-view_footer {
+        .grid-view_totalrow {
+            .grid-view-row {
+                .grid-view-cell:not(:last-child) {
+                    @apply #{$border-color};
+                }
+                .grid-view-cell:last-child {
+                    border-right: 0
+                }
+            }
+        }
+    }
+
+    &.grid-view_row-border {
+        .grid-view_header {
+            .grid-view_header-cell {
+                @apply border-r-0 #{$border-color};
+            }
+        }
+
+        .grid-view_body {
+            .grid-view-row {
+                .grid-view-cell {
+                    @apply border-b border-r-0 #{$border-color};
+                }
+            }
+        }
+        .grid-view_totalrow {
             .grid-view-row {
                 .grid-view-cell {
                     @apply #{$border-color};
                 }
             }
         }
-        
     }
 
-    &.grid-view_row-border {
+    &.grid-view_both-border {
+        .grid-view_header {
+            .grid-view_header-cell {
+                @apply border-r #{$border-color};
+            }
+        }
+
         .grid-view_body {
             .grid-view-row {
+                .grid-view-cell {
+                    @apply border-b  #{$border-color};
+                }
+            }
+        }
+
+        .grid-view_filterrow {
+            .grid-view-cell:not(:last-child) {
                 @apply #{$border-color};
             }
         }
+
+        .grid-view_totalrow {
+            .grid-view-row {
+                .grid-view-cell {
+                    @apply #{$border-color};
+                }
+            }
+        }
     }
+
     /** 斑马条纹，隔行变色 */
     &.grid-view_stripe {
         .grid-view_body {
@@ -91,19 +143,19 @@ $border-color: border-gray-300;
    
 
     .grid-view_header {
-        @apply overflow-hidden min-h-[40px] bg-zinc-100 flex-none relative border-b #{$border-color};
+        @apply overflow-hidden min-h-[40px] bg-zinc-100 flex-none relative;
 
         .grid-view_header-row {
             @apply flex flex-row h-10 relative;
         }
 
         .grid-view_header-cell {
-            @apply flex flex-row grow-0 items-center px-1 bg-zinc-100 border-r border-transparent h-full shrink-0;
+            @apply flex flex-row grow-0  h-full shrink-0 items-center px-1 bg-zinc-100 border-r border-b border-transparent;
         }
 
         &.grid-view_header-hierarchy {
             .grid-view_header-cell {
-                @apply absolute;
+                @apply absolute h-10;
 
                 &.grid-view-fixed-col, &.grid-view-fixed-col-right {
                     @apply sticky z-20;
@@ -114,9 +166,10 @@ $border-color: border-gray-300;
 
     /** 过滤行 */
     .grid-view_filterrow {
-        @apply h-10 border-b border-gray-400 flex flex-row items-center  overflow-hidden;
+        @apply   flex flex-row items-center  overflow-hidden;
         .grid-view-cell {
-            @apply h-full flex flex-row  items-center px-1 bg-stone-50 border-r border-transparent shrink-0;
+            @apply h-10 flex flex-row grow-0 items-center px-1 bg-stone-50 border-r border-transparent shrink-0
+            border-b;
         }
     }
 
@@ -124,9 +177,9 @@ $border-color: border-gray-300;
         @apply flex-1 overflow-auto bg-white;
 
         .grid-view-row {
-            @apply h-8 flex flex-row border-b border-transparent;
+            @apply h-8 flex flex-row ;
             .grid-view-cell {
-                @apply h-full flex flex-row  items-center px-1 bg-white border-r border-transparent shrink-0;
+                @apply h-full flex flex-row  items-center px-1 bg-white border-r border-transparent shrink-0 border-b;
             }
 
             &:hover {
@@ -143,26 +196,24 @@ $border-color: border-gray-300;
         }
     }
 
-    .grid-view_footer {
-        @apply overflow-hidden  border-zinc-400 bg-stone-50;
+    .grid-view_totalrow {
+        @apply overflow-hidden  border-slate-300 bg-stone-50;
         .grid-view-row {
-            @apply h-10 flex flex-row border-b border-transparent;
+            @apply flex flex-row;
             .grid-view-cell {
-                @apply h-full flex flex-row  items-center px-1 bg-stone-50 border-r border-transparent shrink-0;
+                @apply h-10 flex flex-row grow-0 items-center px-1 bg-stone-50 border-r border-transparent shrink-0;
             }
-
-            // &:hover {
-            //     .grid-view-cell {
-            //         @apply bg-blue-100 cursor-default;
-            //     }
-            // }
         }
 
         &.total-row_top {
-            @apply border-b
+            .grid-view-cell {
+                @apply border-b
+            }
         }
         &.total-row_bottom {
-            @apply border-t
+            .grid-view-cell {
+                @apply border-t
+            }
         }
     }
 

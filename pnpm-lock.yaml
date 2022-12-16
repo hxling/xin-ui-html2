@@ -1,15 +1,19 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@tailwindcss/forms': ^0.5.3
+  bootstrap-icons: ^1.10.2
   mockjs: ^1.1.0
   sass: ^1.56.2
   tailwindcss: ^3.2.4
 
 dependencies:
+  bootstrap-icons: 1.10.2
   mockjs: 1.1.0
   sass: 1.56.2
 
 devDependencies:
+  '@tailwindcss/forms': 0.5.3_tailwindcss@3.2.4
   tailwindcss: 3.2.4
 
 packages:
@@ -33,6 +37,15 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.14.0
+    dev: true
+
+  /@tailwindcss/forms/0.5.3_tailwindcss@3.2.4:
+    resolution: {integrity: sha512-y5mb86JUoiUgBjY/o6FJSFZSEttfb3Q5gllE4xoKjAAD+vBrnIhE4dViwUuow3va8mpH4s9jyUbUbrRGoRdc2Q==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0 || >= 3.0.0-alpha.1'
+    dependencies:
+      mini-svg-data-uri: 1.4.4
+      tailwindcss: 3.2.4
     dev: true
 
   /acorn-node/1.8.2:
@@ -68,6 +81,10 @@ packages:
   /binary-extensions/2.2.0:
     resolution: {integrity: sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==}
     engines: {node: '>=8'}
+
+  /bootstrap-icons/1.10.2:
+    resolution: {integrity: sha512-PTPYadRn1AMGr+QTSxe4ZCc+Wzv9DGZxbi3lNse/dajqV31n2/wl/7NX78ZpkvFgRNmH4ogdIQPQmxAfhEV6nA==}
+    dev: false
 
   /braces/3.0.2:
     resolution: {integrity: sha512-b8um+L1RzM3WDSzvhm6gIz1yfTbBt6YTlcEKAvsmqCZZFw46z626lVj9j1yEPW33H5H+lBQpZMP1k8l+78Ha0A==}
@@ -231,6 +248,11 @@ packages:
     dependencies:
       braces: 3.0.2
       picomatch: 2.3.1
+    dev: true
+
+  /mini-svg-data-uri/1.4.4:
+    resolution: {integrity: sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg==}
+    hasBin: true
     dev: true
 
   /minimist/1.2.7:

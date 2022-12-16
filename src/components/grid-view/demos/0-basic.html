@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Grid View 基本样式</title>
 
-    <link rel="stylesheet" href="../../../dist/output.css">
+    <link rel="stylesheet" href="../../../../dist/output.css">
 </head>
 
 <body class="h-full overflow-hidden">
     <div class="w-full h-full p-3 bg-red-100">
         <!-- gridview container-->
-        <div class="grid-view grid-view_row-border grid-view_stripe grid-view_nowrap">
+        <div class="grid-view grid-view_border grid-view_nowrap">
             <!-- grid header-->
             <div class="grid-view_header" id="gridViewHeader">
 
@@ -60,7 +60,7 @@
                             avatar-h.png
                         </div>
                     </div>
-                    <div class="grid-view-row selected" style="width: 1720px">
+                    <div class="grid-view-row" style="width: 1720px">
                         <div class="grid-view-cell" style="width: 100px">2</div>
                         <div class="grid-view-cell" style="width: 140px">赵六</div>
                         <div class="grid-view-cell" style="width: 70px">女</div>
@@ -994,14 +994,6 @@
 
         </div>
     </div>
-    <script type="text/javascript" src="../node_modules/mockjs/dist/mock.js"></script>
-    <script type="module">
-        import * as app from '../index.js';
-
-        app.start();
-
-
-    </script>
 </body>
 
 </html>

@@ -19,16 +19,40 @@
 .grid-view.grid-view_column-border .grid-view_header .grid-view_header-cell {
   @apply border-gray-300;
 }
+.grid-view.grid-view_column-border .grid-view_header .grid-view_header-cell:last-child {
+  border-right: 0;
+}
 .grid-view.grid-view_column-border .grid-view_filterrow .grid-view-cell:not(:last-child) {
   @apply border-gray-300;
 }
 .grid-view.grid-view_column-border .grid-view_body .grid-view-row .grid-view-cell:not(:last-child) {
+  @apply border-b-0 border-gray-300;
+}
+.grid-view.grid-view_column-border .grid-view_totalrow .grid-view-row .grid-view-cell:not(:last-child) {
   @apply border-gray-300;
 }
-.grid-view.grid-view_column-border .grid-view_footer .grid-view-row .grid-view-cell {
+.grid-view.grid-view_column-border .grid-view_totalrow .grid-view-row .grid-view-cell:last-child {
+  border-right: 0;
+}
+.grid-view.grid-view_row-border .grid-view_header .grid-view_header-cell {
+  @apply border-r-0 border-gray-300;
+}
+.grid-view.grid-view_row-border .grid-view_body .grid-view-row .grid-view-cell {
+  @apply border-b border-r-0 border-gray-300;
+}
+.grid-view.grid-view_row-border .grid-view_totalrow .grid-view-row .grid-view-cell {
   @apply border-gray-300;
 }
-.grid-view.grid-view_row-border .grid-view_body .grid-view-row {
+.grid-view.grid-view_both-border .grid-view_header .grid-view_header-cell {
+  @apply border-r border-gray-300;
+}
+.grid-view.grid-view_both-border .grid-view_body .grid-view-row .grid-view-cell {
+  @apply border-b  border-gray-300;
+}
+.grid-view.grid-view_both-border .grid-view_filterrow .grid-view-cell:not(:last-child) {
+  @apply border-gray-300;
+}
+.grid-view.grid-view_both-border .grid-view_totalrow .grid-view-row .grid-view-cell {
   @apply border-gray-300;
 }
 .grid-view.grid-view_stripe .grid-view_body .grid-view-row:nth-child(even) .grid-view-cell {
@@ -48,34 +72,35 @@
   @apply sticky;
 }
 .grid-view .grid-view_header {
-  @apply overflow-hidden min-h-[40px] bg-zinc-100 flex-none relative border-b border-gray-300;
+  @apply overflow-hidden min-h-[40px] bg-zinc-100 flex-none relative;
 }
 .grid-view .grid-view_header .grid-view_header-row {
   @apply flex flex-row h-10 relative;
 }
 .grid-view .grid-view_header .grid-view_header-cell {
-  @apply flex flex-row grow-0 items-center px-1 bg-zinc-100 border-r border-transparent h-full shrink-0;
+  @apply flex flex-row grow-0  h-full shrink-0 items-center px-1 bg-zinc-100 border-r border-b border-transparent;
 }
 .grid-view .grid-view_header.grid-view_header-hierarchy .grid-view_header-cell {
-  @apply absolute;
+  @apply absolute h-10;
 }
 .grid-view .grid-view_header.grid-view_header-hierarchy .grid-view_header-cell.grid-view-fixed-col, .grid-view .grid-view_header.grid-view_header-hierarchy .grid-view_header-cell.grid-view-fixed-col-right {
   @apply sticky z-20;
 }
 .grid-view .grid-view_filterrow {
-  @apply h-10 border-b border-gray-400 flex flex-row items-center  overflow-hidden;
+  @apply flex flex-row items-center  overflow-hidden;
 }
 .grid-view .grid-view_filterrow .grid-view-cell {
-  @apply h-full flex flex-row  items-center px-1 bg-stone-50 border-r border-transparent shrink-0;
+  @apply h-10 flex flex-row grow-0 items-center px-1 bg-stone-50 border-r border-transparent shrink-0
+            border-b;
 }
 .grid-view .grid-view_body {
   @apply flex-1 overflow-auto bg-white;
 }
 .grid-view .grid-view_body .grid-view-row {
-  @apply h-8 flex flex-row border-b border-transparent;
+  @apply h-8 flex flex-row;
 }
 .grid-view .grid-view_body .grid-view-row .grid-view-cell {
-  @apply h-full flex flex-row  items-center px-1 bg-white border-r border-transparent shrink-0;
+  @apply h-full flex flex-row  items-center px-1 bg-white border-r border-transparent shrink-0 border-b;
 }
 .grid-view .grid-view_body .grid-view-row:hover .grid-view-cell {
   @apply bg-blue-100 cursor-default;
@@ -83,19 +108,19 @@
 .grid-view .grid-view_body .grid-view-row.selected .grid-view-cell {
   @apply bg-red-200  !important;
 }
-.grid-view .grid-view_footer {
-  @apply overflow-hidden  border-zinc-400 bg-stone-50;
+.grid-view .grid-view_totalrow {
+  @apply overflow-hidden  border-slate-300 bg-stone-50;
 }
-.grid-view .grid-view_footer .grid-view-row {
-  @apply h-10 flex flex-row border-b border-transparent;
+.grid-view .grid-view_totalrow .grid-view-row {
+  @apply flex flex-row;
 }
-.grid-view .grid-view_footer .grid-view-row .grid-view-cell {
-  @apply h-full flex flex-row  items-center px-1 bg-stone-50 border-r border-transparent shrink-0;
+.grid-view .grid-view_totalrow .grid-view-row .grid-view-cell {
+  @apply h-10 flex flex-row grow-0 items-center px-1 bg-stone-50 border-r border-transparent shrink-0;
 }
-.grid-view .grid-view_footer.total-row_top {
+.grid-view .grid-view_totalrow.total-row_top .grid-view-cell {
   @apply border-b;
 }
-.grid-view .grid-view_footer.total-row_bottom {
+.grid-view .grid-view_totalrow.total-row_bottom .grid-view-cell {
   @apply border-t;
 }
 .grid-view .grid-view_pager {
@@ -121,7 +146,7 @@
 .xin-pagination .pagination-container .pagination-contents li.pagination-list > select {
   @apply focus:outline-none;
 }
-.xin-pagination .pagination-action {
+.xin-pagination .pagination-action:not(.pagination-disabled) {
   @apply border border-gray-200 h-8 shrink-0 px-1 leading-8 rounded-md text-center hover:bg-gray-200 active:bg-gray-300;
 }
 .xin-pagination .pagination-number {
@@ -140,7 +165,7 @@
   @apply bg-blue-100 text-blue-600 border-blue-200;
 }
 .xin-pagination .pagination-disabled {
-  @apply bg-gray-50 text-gray-300;
+  @apply bg-gray-50 text-gray-300 text-center cursor-not-allowed;
 }
 .xin-pagination.left .pagination-container {
   @apply justify-start;
