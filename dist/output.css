@@ -523,6 +523,14 @@ video {
   z-index: 10;
 }
 
+.m-4{
+  margin: 1rem;
+}
+
+.m-2{
+  margin: 0.5rem;
+}
+
 .mx-3{
   margin-left: 0.75rem;
   margin-right: 0.75rem;
@@ -563,6 +571,10 @@ video {
 
 .ml-1{
   margin-left: 0.25rem;
+}
+
+.block{
+  display: block;
 }
 
 .flex{

@@ -4,18 +4,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../../../dist/output.css">
     <style>
 
+.noscroll::-webkit-scrollbar {
+    display: none
+}
+
 .win11Scroll {
-    padding: 0 24px 44px;
-    overflow-y: overlay;
+    overflow: overlay;
+    scroll-behavior: smooth;
     /* display: flex;
-    flex-direction: column;
-    gap: 4px; */
-    -webkit-animation: slideUp .2s;
-    animation: slideUp .2s;
-    box-sizing: border-box;
-    border: 1px solid red;
+    flex-direction: column; */
 }
 
 .win11Scroll::-webkit-scrollbar {
@@ -29,21 +29,26 @@
     border-radius: 7px
 }
 
-
 .win11Scroll::-webkit-scrollbar:vertical:hover {
-    background: 
-    var(--scrollbar-bottom-btn) 0% calc(100% - 3px)/contain no-repeat,
-    var(--scrollbar-top-btn) 0% calc(0% + 3px)/contain no-repeat,var(--scroll)
+    background: var(--scrollbar-bottom-btn) 0% calc(100% - 3px)/contain no-repeat,var(--scrollbar-top-btn) 0% calc(0% + 3px)/contain no-repeat,var(--scroll)
 }
 
 .win11Scroll::-webkit-scrollbar:horizontal:hover {
-    background: 
-    var(--scrollbar-right-btn) calc(100% - 3px) 0%/contain no-repeat,
-    var(--scrollbar-left-btn) calc(0% + 3px) 0%/contain no-repeat,var(--scroll)
+    background: var(--scrollbar-right-btn) calc(100% - 3px) 0%/contain no-repeat,var(--scrollbar-left-btn) calc(0% + 3px) 0%/contain no-repeat,var(--scroll)
 }
 
+.win11Scroll.show::-webkit-scrollbar:vertical {
+    background: var(--scrollbar-bottom-btn) 0% calc(100% - 3px)/contain no-repeat,var(--scrollbar-top-btn) 0% calc(0% + 3px)/contain no-repeat,var(--scroll)
+}
+
+.win11Scroll.show::-webkit-scrollbar:horizontal {
+    background: var(--scrollbar-right-btn) calc(100% - 3px) 0%/contain no-repeat,var(--scrollbar-left-btn) calc(0% + 3px) 0%/contain no-repeat,var(--scroll)
+}
+
+
+
 .win11Scroll::-webkit-scrollbar-thumb {
-    display: block;
+    display: none;
     background: rgba(0,0,0,.5);
     background-clip: padding-box;
     border: 6px solid transparent;
@@ -62,23 +67,82 @@
     display: block
 }
 
-.win11Scroll::-webkit-scrollbar-corner {
-    background-color: blueviolet;
+.win11Scroll.show::-webkit-scrollbar-thumb {
+    display: block
 }
 
-.win11Scroll::-webkit-scrollbar-track {
-    background-color: beige;
+.win11Scroll::-webkit-scrollbar-corner {
+    background: rgba(0,0,0,0)
 }
+
+/* .win11Scroll::-webkit-scrollbar-track {
+    background-color: beige;
+} */
 
     </style>
 </head>
 <body>
-    
-    <div class="bg-red-100 win11Scroll" style="width: 500px; height: 300px;" >
-        <div style="height: 800px;width: 800px;" class="bg-red-200"></div>
+
+    <div class="m-4">
+        <h1>
+            默认样式，鼠标移动到区域后，自动显示与隐藏
+        </h1>
+        <div class="bg-red-100 win11Scroll" style="width: 250px; height: 300px;" >
+            <div style="height: 500px;width: 400px; padding: 20px" class="bg-red-200 m-2">
+            
+                <p>怒发冲冠，</p>
+                <p>凭栏处、潇潇雨歇。</p>
+                <p>抬望眼，仰天长啸，壮怀激烈。</p>
+                <p>三十功名尘与土，八千里路云和月。</p>
+                <p>莫等闲，白了少年头，空悲切！</p>
+                <p></p>
+                <p>靖康耻，犹未雪。</p>
+                <p>臣子恨，何时灭！</p>
+                <p>驾长车，踏破贺兰山缺。</p>
+                <p>壮志饥餐胡虏肉，笑谈渴饮匈奴血。</p>
+                <p>待从头、收拾旧山河，朝天阙。</p>
+
+
+            </div>
+        </div>
+
+
+        <h1>
+            显示滚动条区域
+        </h1>
+        <div class="bg-red-100 win11Scroll show" style="width: 450px; height: 300px;" >
+            <div style="width: 500px; padding: 20px" class="bg-red-200 m-2">
+                <p>
+                先帝创业未半而中道崩殂，今天下三分，益州疲弊，此诚危急存亡之秋也。然侍卫之臣不懈于内，忠志之士忘身于外者，盖追先帝之殊遇，欲报之于陛下也。诚宜开张圣听，以光先帝遗德，恢弘志士之气，不宜妄自菲薄，引喻失义，以塞忠谏之路也。
+            </p>
+                <p>宫中府中，俱为一体，陟罚臧否，不宜异同。若有作奸犯科及为忠善者，宜付有司论其刑赏，以昭陛下平明之理，不宜偏私，使内外异法也。</p>
+                
+            <p>侍中、侍郎郭攸之、费祎、董允等，此皆良实，志虑忠纯，是以先帝简拔以遗陛下。愚以为宫中之事，事无大小，悉以咨之，然后施行，必能裨补阙漏，有所广益。</p>
+                
+            <p>将军向宠，性行淑均，晓畅军事，试用于昔日，先帝称之曰能，是以众议举宠为督。愚以为营中之事，悉以咨之，必能使行阵和睦，优劣得所。</p>
+                
+            <p>亲贤臣，远小人，此先汉所以兴隆也；亲小人，远贤臣，此后汉所以倾颓也。先帝在时，每与臣论此事，未尝不叹息痛恨于桓、灵也。侍中、尚书、长史、参军，此悉贞良死节之臣，愿陛下亲之信之，则汉室之隆，可计日而待也。</p>
+                
+            <p>臣本布衣，躬耕于南阳，苟全性命于乱世，不求闻达于诸侯。先帝不以臣卑鄙，猥自枉屈，三顾臣于草庐之中，咨臣以当世之事，由是感激，遂许先帝以驱驰。后值倾覆，受任于败军之际，奉命于危难之间，尔来二十有一年矣。</p>
+                
+            <p>先帝知臣谨慎，故临崩寄臣以大事也。受命以来，夙夜忧叹，恐托付不效，以伤先帝之明，故五月渡泸，深入不毛。今南方已定，兵甲已足，当奖率三军，北定中原，庶竭驽钝，攘除奸凶，兴复汉室，还于旧都。此臣所以报先帝而忠陛下之职分也。至于斟酌损益，进尽忠言，则攸之、祎、允之任也。</p>
+                
+            <p>愿陛下托臣以讨贼兴复之效，不效，则治臣之罪，以告先帝之灵。若无兴德之言，则责攸之、祎、允等之慢，以彰其咎；陛下亦宜自谋，以咨诹善道，察纳雅言，深追先帝遗诏，臣不胜受恩感激。</p>
+                
+            <p>今当远离，临表涕零，不知所言。</p>
+
+
+            </div>
+        </div>
+
     </div>
 
 
+
+<pre>
+    <code>
+    </code>
+</pre>
 </body>
 </html>
 
