@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialog Window</title>
+    <link rel="stylesheet" href="../../../dist/output.css">
+    <link rel="stylesheet" href="../../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body>
+    
+    <div class="h-20">
+        <button id="btn-open">打开窗口</button>
+        <button id="btn-close">关闭窗口</button>
+    </div>
+
+
+    <div class="xin-dialog-window shadow-md shadow-gray-400" style="width: 600px; height: 430px; top: 200px; left: 320px;">
+
+        <div class="toolbar">
+            <div class="title">
+                <div class="icon">
+                    <i class="bi bi-gear-fill"></i>
+                </div>
+                <div class="text">
+                    系统设置
+                </div>
+            </div>
+            <div class="actbtns">
+                <div class="icon">
+                    <img src="../../assets/img/icon/minimize.png" alt="" width="12">
+                </div>
+                <div class="icon">
+                    <img src="../../assets/img/icon/maxmin.png" alt="" width="12">
+                </div>
+                <div class="icon close">
+                    <img src="../../assets/img/icon/close.png" alt="" width="12">
+                </div>
+            </div>
+        </div>
+
+        <div class="windowContent">
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        var btnOpen = document.querySelector('#btn-open');
+        var btnClose = document.querySelector('#btn-close');
+
+        var dlg = document.querySelector('.xin-dialog-window');
+
+
+        btnOpen.addEventListener('click', (e) => {
+            dlg.classList.remove('closing');
+        });
+
+        
+        btnClose.addEventListener('click', (e) => {
+            dlg.classList.add('closing');
+        });
+
+    </script>
+
+</body>
+</html>

@@ -174,4 +174,104 @@
   @apply border-0;
 }
 
+.win11Scroll {
+  overflow: overlay;
+  scroll-behavior: smooth;
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.win11Scroll::-webkit-scrollbar {
+  --scroll: rgb(255 255 255 / 80%);
+  --scrollbar-top-btn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6.102 16.981c-1.074 0-1.648-1.265-.941-2.073l5.522-6.311a1.75 1.75 0 0 1 2.634 0l5.522 6.311c.707.808.133 2.073-.941 2.073H6.102z' fill='rgb(0 0 0 / 50%)'/%3E%3C/svg%3E");
+  --scrollbar-right-btn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M9 17.898c0 1.074 1.265 1.648 2.073.941l6.311-5.522a1.75 1.75 0 0 0 0-2.634l-6.311-5.522C10.265 4.454 9 5.028 9 6.102v11.796z' fill='rgb(0 0 0 / 50%)'/%3E%3C/svg%3E");
+  --scrollbar-bottom-btn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6.102 8c-1.074 0-1.648 1.265-.941 2.073l5.522 6.311a1.75 1.75 0 0 0 2.634 0l5.522-6.311c.707-.808.133-2.073-.941-2.073H6.102z' fill='rgb(0 0 0 / 50%)'/%3E%3C/svg%3E");
+  --scrollbar-left-btn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M15 17.898c0 1.074-1.265 1.648-2.073.941l-6.311-5.522a1.75 1.75 0 0 1 0-2.634l6.311-5.522c.808-.707 2.073-.133 2.073.941v11.796z' fill='rgb(0 0 0 / 50%)'/%3E%3C/svg%3E");
+  width: 14px;
+  height: 14px;
+  border-radius: 7px;
+}
+
+.win11Scroll::-webkit-scrollbar:vertical:hover {
+  background: var(--scrollbar-bottom-btn) 0% calc(100% - 3px)/contain no-repeat, var(--scrollbar-top-btn) 0% calc(0% + 3px)/contain no-repeat, var(--scroll);
+}
+
+.win11Scroll::-webkit-scrollbar:horizontal:hover {
+  background: var(--scrollbar-right-btn) calc(100% - 3px) 0%/contain no-repeat, var(--scrollbar-left-btn) calc(0% + 3px) 0%/contain no-repeat, var(--scroll);
+}
+
+.win11Scroll.show::-webkit-scrollbar:vertical {
+  background: var(--scrollbar-bottom-btn) 0% calc(100% - 3px)/contain no-repeat, var(--scrollbar-top-btn) 0% calc(0% + 3px)/contain no-repeat, var(--scroll);
+}
+
+.win11Scroll.show::-webkit-scrollbar:horizontal {
+  background: var(--scrollbar-right-btn) calc(100% - 3px) 0%/contain no-repeat, var(--scrollbar-left-btn) calc(0% + 3px) 0%/contain no-repeat, var(--scroll);
+}
+
+.win11Scroll::-webkit-scrollbar-thumb {
+  display: none;
+  background: rgba(0, 0, 0, 0.5);
+  background-clip: padding-box;
+  border: 6px solid transparent;
+  border-radius: 14px;
+}
+
+.win11Scroll::-webkit-scrollbar-thumb:hover {
+  border: 4px solid transparent;
+}
+
+.win11Scroll::-webkit-scrollbar-button:single-button {
+  height: 14px;
+}
+
+.win11Scroll:hover::-webkit-scrollbar-thumb {
+  display: block;
+}
+
+.win11Scroll.show::-webkit-scrollbar-thumb {
+  display: block;
+}
+
+.win11Scroll::-webkit-scrollbar-corner {
+  background: rgba(0, 0, 0, 0);
+}
+
+.xin-dialog-window {
+  @apply absolute top-0 left-0 w-full h-full rounded-md transition-all origin-center flex flex-col;
+  background: #f3f3f3 radial-gradient(#eff4f9 75%, #f3f3f3 100%) no-repeat fixed;
+}
+.xin-dialog-window .toolbar {
+  @apply flex shrink-0 w-full h-7 relative justify-between items-center rounded-tl-md rounded-tr-md;
+}
+.xin-dialog-window .toolbar .icon {
+  @apply relative grid place-items-center;
+}
+.xin-dialog-window .toolbar .title {
+  @apply flex grow items-center h-full text-xs;
+}
+.xin-dialog-window .toolbar .title .icon {
+  @apply mr-[10px] ml-[6px];
+}
+.xin-dialog-window .toolbar .actbtns {
+  @apply flex items-center h-full;
+}
+.xin-dialog-window .toolbar .actbtns .icon {
+  @apply h-full transition-all ease-in-out px-4 hover:bg-gray-200;
+}
+.xin-dialog-window .toolbar .actbtns .icon.close {
+  @apply hover:bg-red-400 rounded-tr-md;
+}
+.xin-dialog-window .toolbar .actbtns .icon.close:hover img {
+  filter: invert(1);
+}
+.xin-dialog-window .toolbar .actbtns .icon:active img {
+  @apply transition-all duration-100 ease-in-out;
+  transform: scale(0.7);
+}
+.xin-dialog-window.closing {
+  transform: scale(0.8);
+  opacity: 0;
+  pointer-events: none;
+}
+
 /*# sourceMappingURL=index.css.map */

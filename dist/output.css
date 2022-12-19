@@ -573,10 +573,6 @@ video {
   margin-left: 0.25rem;
 }
 
-.block{
-  display: block;
-}
-
 .flex{
   display: flex;
 }
@@ -714,10 +710,21 @@ video {
   font-weight: 600;
 }
 
+.shadow-md{
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .shadow{
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-gray-400{
+  --tw-shadow-color: #9ca3af;
+  --tw-shadow: var(--tw-shadow-colored);
 }
 
 .outline-none{
@@ -1127,6 +1134,162 @@ video {
 
 .xin-pagination.simple-mode .pagination-action{
   border-width: 0px;
+}
+
+.win11Scroll {
+  overflow: overlay;
+  scroll-behavior: smooth;
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.win11Scroll::-webkit-scrollbar {
+  --scroll: rgb(255 255 255 / 80%);
+  --scrollbar-top-btn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6.102 16.981c-1.074 0-1.648-1.265-.941-2.073l5.522-6.311a1.75 1.75 0 0 1 2.634 0l5.522 6.311c.707.808.133 2.073-.941 2.073H6.102z' fill='rgb(0 0 0 / 50%)'/%3E%3C/svg%3E");
+  --scrollbar-right-btn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M9 17.898c0 1.074 1.265 1.648 2.073.941l6.311-5.522a1.75 1.75 0 0 0 0-2.634l-6.311-5.522C10.265 4.454 9 5.028 9 6.102v11.796z' fill='rgb(0 0 0 / 50%)'/%3E%3C/svg%3E");
+  --scrollbar-bottom-btn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6.102 8c-1.074 0-1.648 1.265-.941 2.073l5.522 6.311a1.75 1.75 0 0 0 2.634 0l5.522-6.311c.707-.808.133-2.073-.941-2.073H6.102z' fill='rgb(0 0 0 / 50%)'/%3E%3C/svg%3E");
+  --scrollbar-left-btn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M15 17.898c0 1.074-1.265 1.648-2.073.941l-6.311-5.522a1.75 1.75 0 0 1 0-2.634l6.311-5.522c.808-.707 2.073-.133 2.073.941v11.796z' fill='rgb(0 0 0 / 50%)'/%3E%3C/svg%3E");
+  width: 14px;
+  height: 14px;
+  border-radius: 7px;
+}
+
+.win11Scroll::-webkit-scrollbar:vertical:hover {
+  background: var(--scrollbar-bottom-btn) 0% calc(100% - 3px)/contain no-repeat, var(--scrollbar-top-btn) 0% calc(0% + 3px)/contain no-repeat, var(--scroll);
+}
+
+.win11Scroll::-webkit-scrollbar:horizontal:hover {
+  background: var(--scrollbar-right-btn) calc(100% - 3px) 0%/contain no-repeat, var(--scrollbar-left-btn) calc(0% + 3px) 0%/contain no-repeat, var(--scroll);
+}
+
+.win11Scroll.show::-webkit-scrollbar:vertical {
+  background: var(--scrollbar-bottom-btn) 0% calc(100% - 3px)/contain no-repeat, var(--scrollbar-top-btn) 0% calc(0% + 3px)/contain no-repeat, var(--scroll);
+}
+
+.win11Scroll.show::-webkit-scrollbar:horizontal {
+  background: var(--scrollbar-right-btn) calc(100% - 3px) 0%/contain no-repeat, var(--scrollbar-left-btn) calc(0% + 3px) 0%/contain no-repeat, var(--scroll);
+}
+
+.win11Scroll::-webkit-scrollbar-thumb {
+  display: none;
+  background: rgba(0, 0, 0, 0.5);
+  background-clip: padding-box;
+  border: 6px solid transparent;
+  border-radius: 14px;
+}
+
+.win11Scroll::-webkit-scrollbar-thumb:hover {
+  border: 4px solid transparent;
+}
+
+.win11Scroll::-webkit-scrollbar-button:single-button {
+  height: 14px;
+}
+
+.win11Scroll:hover::-webkit-scrollbar-thumb {
+  display: block;
+}
+
+.win11Scroll.show::-webkit-scrollbar-thumb {
+  display: block;
+}
+
+.win11Scroll::-webkit-scrollbar-corner {
+  background: rgba(0, 0, 0, 0);
+}
+
+.xin-dialog-window{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  transform-origin: center;
+  flex-direction: column;
+  border-radius: 0.375rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  background: #f3f3f3 radial-gradient(#eff4f9 75%, #f3f3f3 100%) no-repeat fixed;
+}
+
+.xin-dialog-window .toolbar{
+  position: relative;
+  display: flex;
+  height: 1.75rem;
+  width: 100%;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  border-top-left-radius: 0.375rem;
+  border-top-right-radius: 0.375rem;
+}
+
+.xin-dialog-window .toolbar .icon{
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.xin-dialog-window .toolbar .title{
+  display: flex;
+  height: 100%;
+  flex-grow: 1;
+  align-items: center;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.xin-dialog-window .toolbar .title .icon{
+  margin-right: 10px;
+  margin-left: 6px;
+}
+
+.xin-dialog-window .toolbar .actbtns{
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.xin-dialog-window .toolbar .actbtns .icon{
+  height: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  transition-property: all;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.xin-dialog-window .toolbar .actbtns .icon:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
+
+.xin-dialog-window .toolbar .actbtns .icon.close{
+  border-top-right-radius: 0.375rem;
+}
+
+.xin-dialog-window .toolbar .actbtns .icon.close:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
+}
+
+.xin-dialog-window .toolbar .actbtns .icon.close:hover img {
+  filter: invert(1);
+}
+
+.xin-dialog-window .toolbar .actbtns .icon:active img{
+  transition-property: all;
+  transition-duration: 100ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scale(0.7);
+}
+
+.xin-dialog-window.closing {
+  transform: scale(0.8);
+  opacity: 0;
+  pointer-events: none;
 }
 
 .hover\:bg-indigo-300:hover{

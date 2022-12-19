@@ -1,0 +1,52 @@
+.xin-dialog-window {
+    @apply absolute top-0 left-0 w-full h-full rounded-md transition-all origin-center flex flex-col;
+    background: #f3f3f3 radial-gradient(#eff4f9 75%, #f3f3f3 100%) no-repeat fixed;
+
+    .toolbar {
+        @apply flex shrink-0 w-full h-7 relative justify-between items-center rounded-tl-md rounded-tr-md;
+
+        .icon {
+            @apply relative grid place-items-center;
+        }
+
+        .title {
+            @apply flex grow items-center h-full text-xs;
+
+            .icon {
+                @apply mr-[10px] ml-[6px];
+            }
+            .text {
+            }
+        }
+
+        .actbtns {
+            @apply flex items-center h-full;
+            .icon {
+                @apply h-full transition-all ease-in-out px-4 hover:bg-gray-200;
+                &.close {
+                    @apply hover:bg-red-400 rounded-tr-md;
+                    &:hover{
+                        img{
+                            filter: invert(1);
+                        }
+                    }
+                }
+
+                &:active img {
+                    @apply transition-all duration-100 ease-in-out;
+                    transform: scale(.7);
+                }
+            }
+        }
+    }
+
+    .windowContent {
+
+    }
+
+    &.closing {
+        transform: scale(.8);
+        opacity: 0;
+        pointer-events: none;
+    }
+}
