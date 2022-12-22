@@ -1,0 +1,41 @@
+.xin-btn {
+    @apply px-4 py-2 rounded text-sm border-transparent border ;
+
+
+    &.xin-btn-rounded {
+        @apply rounded-2xl;
+    }
+
+
+    &.xin-btn-primary {
+        @apply text-white hover:bg-primary-hover bg-primary border-primary;
+    }
+
+    &.xin-btn-secondary {
+        @apply text-white hover:bg-secondary-hover bg-secondary border-secondary;
+    }
+
+    &.xin-btn-success {
+        @apply text-white hover:bg-success-hover bg-success border-success;
+    }
+
+    &.xin-btn-info {
+        @apply text-white hover:bg-info-hover bg-info border-info;
+    }
+
+    &.xin-btn-warning {
+        @apply text-white hover:bg-warning-hover bg-warning border-warning;
+    }
+
+    &.xin-btn-danger {
+        @apply text-white hover:bg-danger-hover bg-danger border-danger;
+    }
+
+    &.xin-btn-dark {
+        @apply text-white hover:bg-dark-hover bg-dark border-dark;
+    }
+
+    &.xin-btn-light {
+        @apply text-gray-600 hover:bg-light-hover bg-light border-light;
+    }
+}

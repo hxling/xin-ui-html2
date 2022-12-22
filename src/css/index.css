@@ -2,6 +2,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.xin-btn {
+  @apply px-4 py-2 rounded text-sm border-transparent border;
+}
+.xin-btn.xin-btn-rounded {
+  @apply rounded-2xl;
+}
+.xin-btn.xin-btn-primary {
+  @apply text-white hover:bg-primary-hover bg-primary border-primary;
+}
+.xin-btn.xin-btn-secondary {
+  @apply text-white hover:bg-secondary-hover bg-secondary border-secondary;
+}
+.xin-btn.xin-btn-success {
+  @apply text-white hover:bg-success-hover bg-success border-success;
+}
+.xin-btn.xin-btn-info {
+  @apply text-white hover:bg-info-hover bg-info border-info;
+}
+.xin-btn.xin-btn-warning {
+  @apply text-white hover:bg-warning-hover bg-warning border-warning;
+}
+.xin-btn.xin-btn-danger {
+  @apply text-white hover:bg-danger-hover bg-danger border-danger;
+}
+.xin-btn.xin-btn-dark {
+  @apply text-white hover:bg-dark-hover bg-dark border-dark;
+}
+.xin-btn.xin-btn-light {
+  @apply text-gray-600 hover:bg-light-hover bg-light border-light;
+}
+
 .grid-view {
   @apply flex flex-col h-full text-sm relative border border-transparent bg-white text-[13px];
   /** 斑马条纹，隔行变色 */
@@ -236,9 +267,21 @@
   background: rgba(0, 0, 0, 0);
 }
 
+.win11Scroll.nobtn::-webkit-scrollbar:vertical {
+  background: none;
+}
+.win11Scroll.nobtn::-webkit-scrollbar:horizontal {
+  background: none;
+}
+.win11Scroll.nobtn::-webkit-scrollbar-button:single-button {
+  height: 0px;
+  width: 0px;
+}
+
 .xin-dialog-window {
   @apply absolute top-0 left-0 w-full h-full rounded-md transition-all origin-center flex flex-col;
   background: #f3f3f3 radial-gradient(#eff4f9 75%, #f3f3f3 100%) no-repeat fixed;
+  /** 窗口内容区域 */
 }
 .xin-dialog-window .toolbar {
   @apply flex shrink-0 w-full h-7 relative justify-between items-center rounded-tl-md rounded-tr-md;
@@ -267,6 +310,12 @@
 .xin-dialog-window .toolbar .actbtns .icon:active img {
   @apply transition-all duration-100 ease-in-out;
   transform: scale(0.7);
+}
+.xin-dialog-window .windowContent {
+  @apply flex-1 mt-1 overflow-hidden;
+}
+.xin-dialog-window .windowFooter {
+  @apply h-14 flex items-center;
 }
 .xin-dialog-window.closing {
   transform: scale(0.8);

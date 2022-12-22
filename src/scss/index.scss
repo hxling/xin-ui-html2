@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import 'button.scss';
 @import 'grid-view.scss';
 @import 'pagination.scss';
 @import 'scroll.scss';

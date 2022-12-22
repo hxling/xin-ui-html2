@@ -40,8 +40,13 @@
         }
     }
 
+    /** 窗口内容区域 */
     .windowContent {
+        @apply flex-1 mt-1 overflow-hidden;
+    }
 
+    .windowFooter {
+        @apply h-14 flex items-center;
     }
 
     &.closing {

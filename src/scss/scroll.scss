@@ -62,3 +62,18 @@
 .win11Scroll::-webkit-scrollbar-corner {
     background: rgba(0,0,0,0)
 }
+
+
+.win11Scroll.nobtn{
+    &::-webkit-scrollbar:vertical {
+        background: none;
+    }
+    &::-webkit-scrollbar:horizontal {
+        background: none;
+    }
+
+    &::-webkit-scrollbar-button:single-button {
+        height: 0px;
+        width: 0px;
+    }
+}
