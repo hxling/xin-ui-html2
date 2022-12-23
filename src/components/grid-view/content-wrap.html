@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../../dist/output.css">
+    <link rel="stylesheet" href="../../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <title>GridView index</title>
+</head>
+<body class="flex flex-col h-full overflow-hidden">
+    <div class="flex-none w-full h-20 bg-emerald-200">
+        <input type="number" min="10" value="50" id="totalItems"> 
+        <button class="w-16 bg-indigo-500 hover:bg-indigo-300" id="btnLoad">加载</button>
+    </div>
+    <div class="flex-1 w-full h-full p-3 overflow-hidden bg-red-100">
+        <!-- gridview container-->
+        <div class="grid-view grid-view_both-border grid-view_border grid-view_nowrap grid-view_header-wrap">
+            <div class="grid-view_menu-btn" style="width: 17px;"></div>
+            <!-- grid header-->
+            <div class="grid-view_header" id="gridViewHeader">
+                <!-- <div class="grid-view_header-row" style="width: 700px;">
+                    <div class="grid-view_header-cell" style="width: 100px">ID</div>
+                    <div class="grid-view_header-cell" style="width: 200px">姓名</div>
+                    <div class="grid-view_header-cell" style="width: 300px">性别</div>
+                    <div class="grid-view_header-cell" style="width: 100px">出生日期</div>
+                    <div class="grid-view_header-cell" style="width: 100px">地址</div>
+                    <div class="grid-view_header-cell" style="width: 100px">工作简历</div>
+                    <div class="grid-view_header-cell" style="width: 100px">期望薪资</div>
+                    <div class="grid-view_header-cell" style="width: 100px">应聘职位</div>
+                    <div class="grid-view_header-cell" style="width: 100px">Avatar</div>
+                </div> -->
+            </div>
+
+            <div class="z-10 shadow grid-view_filterrow" id="gridViewFilterRow">
+                <div class="grid-view-cell grid-view_row-checkbox grid-view-fixed-col" style="width: 40px; left: 0px;"></div>
+                <div class="grid-view-cell grid-view_row-linenumber grid-view-fixed-col" style="width: 40px; left: 40px;"></div>
+                <div class="grid-view-cell" style="width: 100px">
+                    <div class="flex-1 p-1">
+                        <input type="text" class="w-full h-6 p-1 border border-gray-400 rounded outline-none focus:border-blue-400">
+                    </div>
+                </div>
+                <div class="grid-view-cell" style="width: 140px">
+                    <div class="flex-1 p-1">
+                        <input type="text" class="w-full h-6 p-1 border border-gray-400 rounded outline-none focus:border-blue-400">
+                    </div>
+                </div>
+                <div class="grid-view-cell" style="width: 70px">
+                    <div class="flex-1 p-1">
+                        <input type="text" class="w-full h-6 p-1 border border-gray-400 rounded outline-none focus:border-blue-400">
+                    </div>
+                </div>
+                <div class="grid-view-cell" style="width: 160px">
+                    <div class="flex-1 p-1">
+                        <input type="text" class="w-full h-6 p-1 border border-gray-400 rounded outline-none focus:border-blue-400">
+                    </div></div>
+                <div class="grid-view-cell" style="width: 120px">
+                    <div class="flex-1 p-1">
+                        <input type="text" class="w-full h-6 p-1 border border-gray-400 rounded outline-none focus:border-blue-400">
+                    </div>
+                </div>
+                <div class="grid-view-cell" style="width: 400px">
+                    <div class="flex-1 p-1">
+                        <input type="text" class="w-full h-6 p-1 border border-gray-400 rounded outline-none focus:border-blue-400">
+                    </div>
+                </div>
+                <div class="grid-view-cell" style="width: 140px">
+                    <div class="flex-1 p-1">
+                        <input type="text" class="w-full h-6 p-1 border border-gray-400 rounded outline-none focus:border-blue-400">
+                    </div>
+                </div>
+                <div class="grid-view-cell" style="width: 70px">
+                    <div class="flex-1 p-1">
+                        <input type="text" class="w-full h-6 p-1 border border-gray-400 rounded outline-none focus:border-blue-400">
+                    </div></div>
+                <div class="grid-view-cell grid-view-fixed-col-right" style="width: 100px;right:257px">
+                    <div class="flex-1 p-1">
+                        <input type="text" class="w-full h-6 p-1 border border-gray-400 rounded outline-none focus:border-blue-400">
+                    </div>
+                </div>
+                <div class="grid-view-cell grid-view-fixed-col-right" style="width: 100px;right:157px">
+                    <div class="flex-1 p-1">
+                        <input type="text" class="w-full h-6 p-1 border border-gray-400 rounded outline-none focus:border-blue-400">
+                    </div>
+                </div>
+                <div class="grid-view-cell grid-view-fixed-col-right" style="width: 140px;right: 17px">
+                    <div class="flex-1 p-1">
+                        <input type="text" class="w-full h-6 p-1 border border-gray-400 rounded outline-none focus:border-blue-400">
+                    </div>
+                </div>
+                <div class="grid-view-cell grid-view-fixed-col-right" style="width: 17px;right:0px"></div>
+            </div>
+
+            <!-- grid rows-->
+            <div class="grid-view_body" id="gridViewbody">
+
+                <!-- <div class="grid-view-row" style="width: 700px;">
+                    <div class="grid-view-cell" style="width: 100px">1</div>
+                    <div class="grid-view_header-cell" style="width: 200px">Bug</div>
+                    <div class="grid-view_header-cell" style="width: 300px">帮助组件 - 支持左列表右树</div>
+                    <div class="grid-view_header-cell" style="width: 100px">黄秀岭</div>
+                </div> -->
+               
+
+
+            </div>
+            <!-- grid footer-->
+            <div class="grid-view_totalrow total-row_bottom" id="gridViewFooter">
+                <div>
+                    <div class="grid-view-row" style="width: 1817px">
+                        <div class="grid-view-cell grid-view_row-checkbox grid-view-fixed-col" style="width: 40px; left: 0px;"></div>
+                        <div class="grid-view-cell grid-view_row-linenumber grid-view-fixed-col" style="width: 40px; left: 40px;"></div>
+                        <div class="grid-view-cell" style="width: 100px">合计：</div>
+                        <div class="grid-view-cell" style="width: 140px">共 10 条</div>
+                        <div class="grid-view-cell" style="width: 70px"></div>
+                        <div class="grid-view-cell" style="width: 160px"></div>
+                        <div class="grid-view-cell" style="width: 300px">
+                            贵州省 六盘水市 钟山区
+                        </div>
+                        <div class="grid-view-cell" style="width: 400px">
+                            
+                        </div>
+                        <div class="grid-view-cell" style="width: 140px">14220</div>
+                        <div class="grid-view-cell" style="width: 70px">true</div>
+                        <div class="grid-view-cell grid-view-fixed-col-right" style="width: 100px;right:257px">9999999</div>
+                        <div class="grid-view-cell grid-view-fixed-col-right" style="width: 100px;right:157px">331517</div>
+                        <div class="grid-view-cell grid-view-fixed-col-right" style="width: 140px;right: 17px">
+                            avatar-h.png
+                        </div>
+                        <div class="grid-view-cell grid-view-fixed-col-right" style="width: 17px;right:0px"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- grid pager-->
+            <div class="grid-view_pager">
+                <div class="flex-1 pr-1 xin-pagination">
+                    <div class="pagination-container">
+                        <ul class="pagination-contents">
+                            <li class="pagination-goto">
+                                转到第<input type="number" value="20" class="pagination-goto_input">页
+                            </li>
+                            <li class="mx-3 pagination-total">
+                                1-20 / 200
+                            </li>
+                            <li class="mr-2 pagination-list">
+                                <select>
+                                    <option value="10">每页 10 条</option>
+                                    <option value="10">每页 20 条</option>
+                                    <option value="10">每页 30 条</option>
+                                    <option value="10">每页 50 条</option>
+                                    <option value="10">每页 100 条</option>
+                                </select>
+                            </li>
+                            <li class="mr-1.5 pagination-action pagination-first pagination-disabled">
+                                <i class="bi bi-chevron-bar-left"></i>
+                            </li>
+                            <li class="mr-1.5 pagination-action pagination-prev ">
+                                <i class="bi bi-chevron-left"></i>
+                            </li>
+                            <li class="mr-1.5 pagination-action pagination-number">1</li>
+                            <li class="mr-1.5 pagination-action pagination-number pagination-dots">
+                                <i class="bi bi-three-dots"></i>
+                            </li>
+                            <li class="mr-1.5 pagination-action pagination-number pagination-current">3</li>
+                            <li class="mr-1.5 pagination-action pagination-number">4</li>
+                            <li class="mr-1.5 pagination-action pagination-number">5</li>
+                            <li class="mr-1.5 pagination-action pagination-number pagination-dots">
+                                <i class="bi bi-three-dots"></i>
+                            </li>
+                            <li class="mr-1.5 pagination-action pagination-number">20</li>
+                            <li class="mr-1.5 pagination-action pagination-next pagination-disabled"><i class="bi bi-chevron-right"></i></li>
+                            <li class="pagination-action pagination-last"><i class="bi bi-chevron-bar-right"></i></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <script type="text/javascript" src="../../../node_modules/mockjs/dist/mock.js"></script>
+    <script type="module">
+        import * as app from './index.js';
+
+        import * as GroupColumns from './group-header.js';
+        app.run(50, true);
+
+
+        function reload() {
+            const value = document.querySelector('#totalItems').value;
+            app.run(value || 10, true);
+        }
+
+        document.querySelector('#btnLoad').addEventListener('click', () => {
+            reload();
+        });
+        
+    </script>
+
+</body>
+</html>

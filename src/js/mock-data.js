@@ -133,6 +133,10 @@ export function renderGridRows(data, cols, opts) {
                 cellDiv.style.right = `${col.right}px`;
                 cellDiv.classList.add('grid-view-fixed-col-right');
             }
+
+            if (col.wrap) {
+                cellDiv.classList.add('wrap-content');
+            }
     
             rowDiv.appendChild(cellDiv);
         });

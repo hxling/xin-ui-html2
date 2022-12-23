@@ -87,8 +87,28 @@ function getColumns() {
 }
 
 
-function renderGridHeader(hasScrollY) {
-    const cols = getColumns();
+function getColumns2() {
+    const cols = [
+        { field: 'id', width: 100, title: 'ID' },
+        { field: 'name', width: 140, title: '姓名' },
+        { field: 'sex', width: 70, title: '超长表头超长表头超长表头' },
+        { field: 'birthday', width: 160, title: '出生日期' },
+        { field: 'addr', width: 120, title: '地址', wrap: true },
+        {
+            field: 'longText', title: '工作简历', width: 400
+        },
+        { field: 'nianxin', width: 140, title: '期望薪资' },
+        { field: 'marry', width: 70, title: '婚否' },
+        { field: 'zhiwei', width: 100, title: '应聘职位', fixed: 'right', right: 240 },
+        { field: 'zip', width: 100, title: '邮编' , fixed: 'right', right: 140},
+        { field: 'avatar', width: 140, title: '头像', fixed: 'right', right: 0}
+    ];
+    return cols;
+}
+
+
+function renderGridHeader(hasScrollY, fields = null) {
+    const cols = fields || getColumns();
 
     const gvConvas =  document.querySelector('.grid-view_header-row');
     if (gvConvas) {
@@ -141,11 +161,11 @@ function renderGridHeader(hasScrollY) {
     return headerRowDiv;
 }
 
-export function run(datalength = 50) {
+export function run(datalength = 50, headerWrap = false) {
     
     const header = document.querySelector('#gridViewHeader');
     const gridViewbody = document.querySelector('#gridViewbody');
-    const cols = getColumns();
+    const cols = headerWrap? getColumns2():  getColumns();
     
     const data = DataHelper.createData(datalength);
     gridViewbody.appendChild(DataHelper.renderGridRows(data, cols, {
@@ -153,7 +173,7 @@ export function run(datalength = 50) {
     }));
 
     setTimeout(() => {
-        const colElements = renderGridHeader(gridViewbody.scrollHeight > gridViewbody.clientHeight);
+        const colElements = renderGridHeader(gridViewbody.scrollHeight > gridViewbody.clientHeight, cols);
         header.appendChild(colElements);
         if (gridViewbody.scrollHeight > gridViewbody.clientHeight) {
             colElements.style.width =  `${DataHelper.getColumnsWidthTotal(cols) + DataHelper.scrollYWidth}px`;

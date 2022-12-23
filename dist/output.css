@@ -851,6 +851,9 @@ video {
   padding-bottom: 0.5rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
+  transition-property: all;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .xin-btn.xin-btn-rounded{
@@ -1142,6 +1145,10 @@ video {
   z-index: 20;
 }
 
+.grid-view.grid-view_header-wrap .grid-view_header .grid-view_header-row, .grid-view.grid-view_header-wrap .grid-view_header .grid-view_header-cell {
+  height: unset;
+}
+
 .grid-view .grid-view_filterrow{
   display: flex;
   flex-direction: row;
@@ -1174,13 +1181,12 @@ video {
 
 .grid-view .grid-view_body .grid-view-row{
   display: flex;
-  height: 2rem;
+  min-height: 32px;
   flex-direction: row;
 }
 
 .grid-view .grid-view_body .grid-view-row .grid-view-cell{
   display: flex;
-  height: 100%;
   flex-shrink: 0;
   flex-direction: row;
   align-items: center;
@@ -1191,6 +1197,11 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   padding-left: 0.25rem;
   padding-right: 0.25rem;
+}
+
+.grid-view .grid-view_body .grid-view-row .grid-view-cell.wrap-content{
+  flex-wrap: wrap;
+  white-space: normal;
 }
 
 .grid-view .grid-view_body .grid-view-row:hover .grid-view-cell{

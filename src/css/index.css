@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 .xin-btn {
-  @apply px-4 py-2 rounded text-sm border-transparent border;
+  @apply px-4 py-2 rounded text-sm border-transparent border transition-all duration-150 ease-in-out;
 }
 .xin-btn.xin-btn-rounded {
   @apply rounded-2xl;
@@ -117,6 +117,9 @@
 .grid-view .grid-view_header.grid-view_header-hierarchy .grid-view_header-cell.grid-view-fixed-col, .grid-view .grid-view_header.grid-view_header-hierarchy .grid-view_header-cell.grid-view-fixed-col-right {
   @apply sticky z-20;
 }
+.grid-view.grid-view_header-wrap .grid-view_header .grid-view_header-row, .grid-view.grid-view_header-wrap .grid-view_header .grid-view_header-cell {
+  height: unset;
+}
 .grid-view .grid-view_filterrow {
   @apply flex flex-row items-center  overflow-hidden;
 }
@@ -128,10 +131,13 @@
   @apply flex-1 overflow-auto bg-white;
 }
 .grid-view .grid-view_body .grid-view-row {
-  @apply h-8 flex flex-row;
+  @apply flex flex-row min-h-[32px];
 }
 .grid-view .grid-view_body .grid-view-row .grid-view-cell {
-  @apply h-full flex flex-row  items-center px-1 bg-white border-r border-transparent shrink-0 border-b;
+  @apply flex flex-row  items-center px-1 bg-white border-r border-transparent shrink-0 border-b;
+}
+.grid-view .grid-view_body .grid-view-row .grid-view-cell.wrap-content {
+  @apply flex-wrap whitespace-normal;
 }
 .grid-view .grid-view_body .grid-view-row:hover .grid-view-cell {
   @apply bg-blue-100 cursor-default;

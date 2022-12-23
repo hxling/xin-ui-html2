@@ -164,6 +164,14 @@ $border-color: border-gray-300;
         }
     }
 
+    &.grid-view_header-wrap {
+        .grid-view_header {
+            .grid-view_header-row, .grid-view_header-cell {
+                height: unset;
+            }
+        }
+    }
+
     /** 过滤行 */
     .grid-view_filterrow {
         @apply   flex flex-row items-center  overflow-hidden;
@@ -177,9 +185,13 @@ $border-color: border-gray-300;
         @apply flex-1 overflow-auto bg-white;
 
         .grid-view-row {
-            @apply h-8 flex flex-row ;
+            @apply flex flex-row min-h-[32px];
             .grid-view-cell {
-                @apply h-full flex flex-row  items-center px-1 bg-white border-r border-transparent shrink-0 border-b;
+                @apply  flex flex-row  items-center px-1 bg-white border-r border-transparent shrink-0 border-b;
+
+                &.wrap-content {
+                    @apply flex-wrap whitespace-normal;
+                }
             }
 
             &:hover {

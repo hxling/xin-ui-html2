@@ -1,5 +1,5 @@
 .xin-btn {
-    @apply px-4 py-2 rounded text-sm border-transparent border ;
+    @apply px-4 py-2 rounded text-sm border-transparent border transition-all duration-150 ease-in-out;
 
 
     &.xin-btn-rounded {
