@@ -65,8 +65,6 @@ import * as DataHelper from '../../js/mock-data.js';
 
 })(window,document);
 
-
-
 function getColumns() {
     const cols = [
         { field: 'id', width: 100, title: 'ID' },
@@ -161,16 +159,56 @@ function renderGridHeader(hasScrollY, fields = null) {
     return headerRowDiv;
 }
 
+function throttle(fn, delay) {
+    let last = 0 // 上次触发时间
+    return function (...args) {
+      const now = Date.now()
+      if (now - last > delay) {
+        last = now
+        fn.apply(this, args)
+      }
+    }
+  }
+
 export function run(datalength = 50, headerWrap = false) {
     
     const header = document.querySelector('#gridViewHeader');
     const gridViewbody = document.querySelector('#gridViewbody');
     const cols = headerWrap? getColumns2():  getColumns();
     
-    const data = DataHelper.createData(datalength);
-    gridViewbody.appendChild(DataHelper.renderGridRows(data, cols, {
+    const dataSource = DataHelper.createData(datalength);
+    // DataHelper.renderGridRows(dataSource, cols, {
+    //     showCheckbox: true, showRowNumber: true
+    // });
+
+    const container = document.querySelector('.grid-view_convas');
+    const totalHeight = datalength * 32;
+    container.style.height = `${totalHeight}px`
+    DataHelper.rerenderByTopOffset(0, dataSource, cols, {
         showCheckbox: true, showRowNumber: true
-    }));
+    });
+
+
+    let _scrollTop = gridViewbody.scrollTop;
+
+    gridViewbody.addEventListener('scroll', (e) => {
+        throttle(function() {
+            if (e.target.scrollTop !== _scrollTop) {
+                DataHelper.rerenderByTopOffset(e.target.scrollTop, dataSource, cols, {
+                    showCheckbox: true, showRowNumber: true
+                });
+                _scrollTop = e.target.scrollTop;
+            }
+        }, 100)();
+    });
+    /**
+     * 参考文章
+     * https://blog.csdn.net/FYAN2001/article/details/124709020
+     */
+    const obs = new IntersectionObserver((e) => {
+        console.log(e);
+    });
+    obs.observe(document.getElementById('loadmore'))
 
     setTimeout(() => {
         const colElements = renderGridHeader(gridViewbody.scrollHeight > gridViewbody.clientHeight, cols);

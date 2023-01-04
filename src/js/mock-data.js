@@ -78,70 +78,109 @@ export function getColumnsWidthTotal(cols, opts) {
 }
 
 
+export function renderGridRowItem(cols,rowData,top, opts) {
+    const rowDiv = document.createElement('div');
+    rowDiv.classList.add('grid-view-row');
+    rowDiv.style.width = `${opts.totalWidth}px`;
+    rowDiv.style.top = `${ top }px`;
+    rowDiv.style.height = `32px`;
+    rowDiv.setAttribute('data-index', opts.index);
+
+    if (opts && opts.showCheckbox) {
+        const chkboxDiv = document.createElement('div');
+        chkboxDiv.classList.add('grid-view-cell','grid-view_row-checkbox');
+        if (opts.fixed) {
+            chkboxDiv.classList.add('grid-view-fixed-col');
+        }
+        chkboxDiv.style.width = `40px`;
+        chkboxDiv.style.left = `0px`;
+        chkboxDiv.innerHTML = '<input type="checkbox" />';
+        rowDiv.appendChild(chkboxDiv);
+    }
+
+    if (opts && opts.showRowNumber) {
+        const lineNumDiv = document.createElement('div');
+        lineNumDiv.classList.add('grid-view-cell', 'grid-view_row-linenumber');
+        if (opts.fixed) {
+            lineNumDiv.classList.add('grid-view-fixed-col');
+        }
+        lineNumDiv.style.width = `40px`;
+        lineNumDiv.style.left = `40px`;
+        lineNumDiv.innerText = `${ opts.index + 1}`;
+        rowDiv.appendChild(lineNumDiv);
+    }
+
+    cols.forEach(col => {
+        const cellDiv = document.createElement('div');
+        cellDiv.classList.add('grid-view-cell');
+        cellDiv.style.width = `${col.width || 100}px`;
+        cellDiv.innerText = rowData[col.field];
+
+        if (col.fixed == 'right') {
+            cellDiv.style.right = `${col.right}px`;
+            cellDiv.classList.add('grid-view-fixed-col-right');
+        }
+
+        if (col.wrap) {
+            cellDiv.classList.add('wrap-content');
+        }
+
+        rowDiv.appendChild(cellDiv);
+    });
+
+    return rowDiv;
+}
+
+export function rerenderByTopOffset(offsetTop, data, cols, opts) {
+    const FixedHeight = 32
+    let _start = Math.max((offsetTop / FixedHeight) >> 0, 0);
+    const container = document.querySelector('.grid-view_convas');
+    if (container) {
+        removeAllChildren(container);
+    }
+    const totalWidth = getColumnsWidthTotal(cols);
+    const fragment = document.createDocumentFragment();
+    const boxEl = document.querySelector('#gridViewbody');
+    const ItemCountShown =  Math.ceil(boxEl.offsetHeight / FixedHeight)
+    for (let i = _start; i < Math.min(ItemCountShown + _start, data.length); i++) {
+        const rowEl = renderGridRowItem(cols, data[i], i * 32,  {
+            totalWidth,
+            ...opts,
+            index: i
+        });
+        fragment.appendChild(rowEl);
+    }
+    container.appendChild(fragment);
+}
+
+
 
 export function renderGridRows(data, cols, opts) {
 
-    const gvConvas =  document.querySelector('.grid-view_convas');
-    if (gvConvas) {
-        gvConvas.remove();
-    }
-
+    const rowsDiv =  document.querySelector('.grid-view_convas');
     opts = Object.assign(defaultOpts, opts || {});
-
-    const rowsDiv = document.createElement('div');
-    rowsDiv.classList.add('grid-view_convas');
 
     const totalWidth = getColumnsWidthTotal(cols);
 
+    const fragment = document.createDocumentFragment()
     data.forEach((d, i) => {
-        const rowDiv = document.createElement('div');
-        rowDiv.classList.add('grid-view-row');
-        rowDiv.style.width = `${totalWidth}px`;
-
-
-        if (opts && opts.showCheckbox) {
-            const chkboxDiv = document.createElement('div');
-            chkboxDiv.classList.add('grid-view-cell','grid-view_row-checkbox');
-            if (opts.fixed) {
-                chkboxDiv.classList.add('grid-view-fixed-col');
-            }
-            chkboxDiv.style.width = `40px`;
-            chkboxDiv.style.left = `0px`;
-            chkboxDiv.innerHTML = '<input type="checkbox" />';
-            rowDiv.appendChild(chkboxDiv);
-        }
-
-        if (opts && opts.showRowNumber) {
-            const lineNumDiv = document.createElement('div');
-            lineNumDiv.classList.add('grid-view-cell', 'grid-view_row-linenumber');
-            if (opts.fixed) {
-                lineNumDiv.classList.add('grid-view-fixed-col');
-            }
-            lineNumDiv.style.width = `40px`;
-            lineNumDiv.style.left = `40px`;
-            lineNumDiv.innerText = `${ i + 1}`;
-            rowDiv.appendChild(lineNumDiv);
-        }
-
-        cols.forEach(col => {
-            const cellDiv = document.createElement('div');
-            cellDiv.classList.add('grid-view-cell');
-            cellDiv.style.width = `${col.width || 100}px`;
-            cellDiv.innerText = d[col.field];
-
-            if (col.fixed == 'right') {
-                cellDiv.style.right = `${col.right}px`;
-                cellDiv.classList.add('grid-view-fixed-col-right');
-            }
-
-            if (col.wrap) {
-                cellDiv.classList.add('wrap-content');
-            }
-    
-            rowDiv.appendChild(cellDiv);
+        const rowEl = renderGridRowItem(cols, d, i*32, {
+            totalWidth,
+            ...opts,
+            index: i
         });
 
-        rowsDiv.appendChild(rowDiv);
+        fragment.appendChild(rowEl);
     });
+
+    rowsDiv.appendChild(fragment);
     return rowsDiv;
 }
+
+export function removeAllChildren(container) {
+    const len = container.children.length
+    for (let i = len - 1; i >= 0; i--) {
+        container.removeChild(container.children[i])
+    }
+}
+  

@@ -181,11 +181,15 @@ $border-color: border-gray-300;
         }
     }
 
+
+
     .grid-view_body {
         @apply flex-1 overflow-auto bg-white;
-
+        .grid-view_convas {
+            @apply relative;
+        }
         .grid-view-row {
-            @apply flex flex-row min-h-[32px];
+            @apply flex flex-row min-h-[32px] absolute;
             .grid-view-cell {
                 @apply  flex flex-row  items-center px-1 bg-white border-r border-transparent shrink-0 border-b;
 
